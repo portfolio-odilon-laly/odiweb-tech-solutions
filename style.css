@@ -1432,4 +1432,6 @@ textarea:focus-visible {
     background: var(--blue);
     color: var(--white);
 }
-
+.preloader {
+    display: none !important;
+}
