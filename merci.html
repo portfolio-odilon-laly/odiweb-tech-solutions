@@ -8,7 +8,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="Merci d'avoir contacté ODIWEB. Votre message a été envoyé avec succès.">
+    <meta name="description" content="Merci d'avoir contacté ODIWEB. Retrouvez le récapitulatif de votre demande.">
 
     <meta name="author" content="Odilon Laly">
 
@@ -17,7 +17,7 @@
     <title>Merci pour votre message | ODIWEB</title>
 
 
-    <!-- Google Fonts -->
+    <!-- GOOGLE FONTS -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
@@ -26,19 +26,19 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 
-    <!-- Font Awesome -->
+    <!-- FONT AWESOME -->
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 
-    <!-- CSS -->
+    <!-- CSS DU SITE -->
 
     <link rel="stylesheet" href="style.css">
 
     <link rel="stylesheet" href="responsive.css">
 
 
-    <!-- Style spécifique à la page Merci -->
+    <!-- STYLE DE LA PAGE MERCI -->
 
     <style>
 
@@ -55,6 +55,8 @@
             flex-direction: column;
 
             background: #F5F7FA;
+
+            overflow-x: hidden;
 
         }
 
@@ -85,6 +87,8 @@
             justify-content: space-between;
 
             align-items: center;
+
+            gap: 20px;
 
         }
 
@@ -153,7 +157,7 @@
 
             justify-content: center;
 
-            padding: 70px 20px;
+            padding: 65px 20px;
 
         }
 
@@ -162,9 +166,9 @@
 
             width: 100%;
 
-            max-width: 750px;
+            max-width: 780px;
 
-            padding: 65px 55px;
+            padding: 55px 50px;
 
             background: #FFFFFF;
 
@@ -200,15 +204,15 @@
         }
 
 
-        /* ICÔNE DE CONFIRMATION */
+        /* ICÔNE */
 
         .thankyou-icon {
 
-            width: 110px;
+            width: 100px;
 
-            height: 110px;
+            height: 100px;
 
-            margin: 0 auto 30px;
+            margin: 0 auto 28px;
 
             display: flex;
 
@@ -222,7 +226,7 @@
 
             color: #087DE0;
 
-            font-size: 48px;
+            font-size: 45px;
 
             position: relative;
 
@@ -235,7 +239,7 @@
 
             position: absolute;
 
-            inset: -10px;
+            inset: -9px;
 
             border: 2px solid rgba(0, 194, 255, 0.20);
 
@@ -250,7 +254,7 @@
 
             display: inline-block;
 
-            margin-bottom: 18px;
+            margin-bottom: 16px;
 
             color: #D4A017;
 
@@ -267,13 +271,13 @@
 
         .thankyou-title {
 
-            margin-bottom: 20px;
+            margin-bottom: 18px;
 
             color: #071B35;
 
             font-family: 'Outfit', sans-serif;
 
-            font-size: clamp(30px, 5vw, 46px);
+            font-size: clamp(30px, 5vw, 44px);
 
             font-weight: 800;
 
@@ -293,20 +297,22 @@
 
             max-width: 560px;
 
-            margin: 0 auto 18px;
+            margin: 0 auto 20px;
 
             color: #64748B;
 
-            font-size: 16px;
+            font-size: 15px;
 
             line-height: 1.8;
 
         }
 
 
+        /* NOTE */
+
         .thankyou-note {
 
-            margin: 25px 0 35px;
+            margin: 25px 0;
 
             padding: 18px 22px;
 
@@ -336,7 +342,140 @@
         }
 
 
-        /* BOUTONS */
+        /* =====================================
+           RÉCAPITULATIF CLIENT
+        ===================================== */
+
+        .client-summary {
+
+            margin: 30px 0;
+
+            padding: 25px;
+
+            background: #F5F7FA;
+
+            border: 1px solid #E2E8F0;
+
+            border-radius: 14px;
+
+            text-align: left;
+
+        }
+
+
+        .client-summary h2 {
+
+            margin-bottom: 22px;
+
+            color: #071B35;
+
+            font-family: 'Outfit', sans-serif;
+
+            font-size: 21px;
+
+            font-weight: 700;
+
+        }
+
+
+        .client-summary h2 i {
+
+            margin-right: 9px;
+
+            color: #D4A017;
+
+        }
+
+
+        .client-summary-content p {
+
+            margin-bottom: 15px;
+
+            color: #475569;
+
+            font-size: 14px;
+
+            line-height: 1.7;
+
+            overflow-wrap: anywhere;
+
+        }
+
+
+        .client-summary-content strong {
+
+            color: #071B35;
+
+        }
+
+
+        .client-message-box {
+
+            margin-top: 15px;
+
+            padding: 18px;
+
+            background: #FFFFFF;
+
+            border-radius: 10px;
+
+            overflow-wrap: anywhere;
+
+        }
+
+
+        .client-message-box strong {
+
+            color: #071B35;
+
+            font-size: 14px;
+
+        }
+
+
+        .client-message-box p {
+
+            margin-top: 12px;
+
+            margin-bottom: 0;
+
+            color: #64748B;
+
+            font-size: 14px;
+
+            line-height: 1.8;
+
+            white-space: pre-wrap;
+
+        }
+
+
+        /* ABSENCE DE DONNÉES */
+
+        .no-client-data {
+
+            display: none;
+
+            margin: 25px 0;
+
+            padding: 18px;
+
+            background: #FFF8E6;
+
+            border-radius: 10px;
+
+            color: #795500;
+
+            font-size: 14px;
+
+            line-height: 1.7;
+
+        }
+
+
+        /* =====================================
+           BOUTONS
+        ===================================== */
 
         .thankyou-buttons {
 
@@ -348,6 +487,8 @@
 
             gap: 15px;
 
+            margin-top: 30px;
+
         }
 
 
@@ -355,7 +496,7 @@
 
             min-height: 52px;
 
-            padding: 15px 25px;
+            padding: 15px 24px;
 
             display: inline-flex;
 
@@ -368,6 +509,8 @@
             border-radius: 8px;
 
             text-decoration: none;
+
+            font-size: 14px;
 
             font-weight: 700;
 
@@ -416,7 +559,16 @@
         }
 
 
-        /* PIED DE PAGE */
+        .thankyou-btn i {
+
+            font-size: 17px;
+
+        }
+
+
+        /* =====================================
+           FOOTER
+        ===================================== */
 
         .thankyou-footer {
 
@@ -442,63 +594,83 @@
         }
 
 
-        /* RESPONSIVE */
+        /* =====================================
+           RESPONSIVE
+        ===================================== */
 
         @media (max-width: 600px) {
 
             .thankyou-header {
 
-                padding: 18px 5%;
+                padding: 17px 5%;
+
+            }
+
+
+            .thankyou-navbar {
+
+                gap: 10px;
 
             }
 
 
             .thankyou-logo {
 
-                font-size: 20px;
+                font-size: 19px;
+
+                gap: 8px;
 
             }
 
 
             .thankyou-logo img {
 
-                width: 38px;
+                width: 36px;
 
-                height: 38px;
+                height: 36px;
 
             }
 
 
             .thankyou-home-link {
 
-                font-size: 13px;
+                font-size: 12px;
+
+                text-align: right;
 
             }
 
 
             .thankyou-main {
 
-                padding: 45px 15px;
+                padding: 35px 14px;
 
             }
 
 
             .thankyou-card {
 
-                padding: 45px 22px;
+                padding: 38px 18px;
 
-                border-radius: 18px;
+                border-radius: 17px;
 
             }
 
 
             .thankyou-icon {
 
-                width: 85px;
+                width: 82px;
 
-                height: 85px;
+                height: 82px;
 
-                font-size: 38px;
+                font-size: 36px;
+
+            }
+
+
+            .thankyou-title {
+
+                font-size: 29px;
 
             }
 
@@ -506,6 +678,20 @@
             .thankyou-description {
 
                 font-size: 14px;
+
+            }
+
+
+            .client-summary {
+
+                padding: 18px;
+
+            }
+
+
+            .client-summary h2 {
+
+                font-size: 18px;
 
             }
 
@@ -525,6 +711,29 @@
 
         }
 
+
+        @media (max-width: 360px) {
+
+            .thankyou-logo {
+
+                font-size: 17px;
+
+            }
+
+            .thankyou-home-link {
+
+                font-size: 11px;
+
+            }
+
+            .thankyou-card {
+
+                padding: 32px 14px;
+
+            }
+
+        }
+
     </style>
 
 </head>
@@ -535,7 +744,9 @@
     <div class="thankyou-page">
 
 
-        <!-- HEADER -->
+        <!-- =====================================
+             HEADER
+        ===================================== -->
 
         <header class="thankyou-header">
 
@@ -564,14 +775,16 @@
 
 
 
-        <!-- CONTENU -->
+        <!-- =====================================
+             CONTENU PRINCIPAL
+        ===================================== -->
 
         <main class="thankyou-main">
 
             <div class="thankyou-card">
 
 
-                <!-- Icône -->
+                <!-- ICÔNE -->
 
                 <div class="thankyou-icon">
 
@@ -580,7 +793,7 @@
                 </div>
 
 
-                <!-- Message -->
+                <!-- MESSAGE -->
 
                 <span class="thankyou-label">
 
@@ -598,18 +811,18 @@
 
                 <p class="thankyou-description">
 
-                    Votre message a été transmis avec succès.
+                    Bonjour <strong id="clientGreeting">cher visiteur</strong>,
+
+                    votre demande a été prise en compte.
 
                     Je vous remercie d'avoir pris le temps de me contacter.
 
-                    Je prendrai connaissance de votre demande et vous répondrai
-
-                    dès que possible.
+                    Je reviendrai vers vous dès que possible.
 
                 </p>
 
 
-                <!-- Information -->
+                <!-- INFORMATION -->
 
                 <div class="thankyou-note">
 
@@ -626,7 +839,81 @@
                 </div>
 
 
-                <!-- Boutons -->
+
+                <!-- =====================================
+                     RÉCAPITULATIF CLIENT
+                ===================================== -->
+
+                <div class="client-summary" id="clientSummary">
+
+                    <h2>
+
+                        <i class="fas fa-file-alt"></i>
+
+                        Récapitulatif de votre demande
+
+                    </h2>
+
+
+                    <div class="client-summary-content">
+
+                        <p>
+
+                            <strong>Nom :</strong>
+
+                            <span id="clientName">-</span>
+
+                        </p>
+
+
+                        <p>
+
+                            <strong>Adresse e-mail :</strong>
+
+                            <span id="clientEmail">-</span>
+
+                        </p>
+
+
+                        <p>
+
+                            <strong>Sujet :</strong>
+
+                            <span id="clientSubject">-</span>
+
+                        </p>
+
+
+                        <div class="client-message-box">
+
+                            <strong>Votre message :</strong>
+
+                            <p id="clientMessage">-</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- MESSAGE SI DONNÉES ABSENTES -->
+
+                <div class="no-client-data" id="noClientData">
+
+                    <i class="fas fa-info-circle"></i>
+
+                    Le récapitulatif de votre demande n'est pas disponible sur cette page.
+
+                    Vous pouvez néanmoins nous contacter directement sur WhatsApp.
+
+                </div>
+
+
+
+                <!-- =====================================
+                     BOUTONS
+                ===================================== -->
 
                 <div class="thankyou-buttons">
 
@@ -640,7 +927,17 @@
                     </a>
 
 
-                    <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" class="thankyou-btn thankyou-btn-secondary">
+                    <a
+
+                        href="https://wa.me/2290150510966"
+
+                        id="thankyouWhatsapp"
+
+                        target="_blank"
+
+                        rel="noopener noreferrer"
+
+                        class="thankyou-btn thankyou-btn-secondary">
 
                         <i class="fab fa-whatsapp"></i>
 
@@ -658,7 +955,9 @@
 
 
 
-        <!-- FOOTER -->
+        <!-- =====================================
+             FOOTER
+        ===================================== -->
 
         <footer class="thankyou-footer">
 
@@ -678,13 +977,110 @@
     </div>
 
 
-    <!-- ANNÉE AUTOMATIQUE -->
+
+    <!-- =====================================
+         JAVASCRIPT
+    ===================================== -->
 
     <script>
 
-        document.getElementById('thankyouYear').textContent = new Date().getFullYear();
+        /* ANNÉE AUTOMATIQUE */
+
+        document.getElementById("thankyouYear").textContent =
+            new Date().getFullYear();
+
+
+        /* RÉCUPÉRATION DES INFORMATIONS CLIENT */
+
+        const savedData = localStorage.getItem("odiweb-client-message");
+
+
+        if (savedData) {
+
+            try {
+
+                const client = JSON.parse(savedData);
+
+
+                /* AFFICHAGE DU NOM */
+
+                document.getElementById("clientName").textContent =
+                    client.name || "-";
+
+
+                /* AFFICHAGE DE L'EMAIL */
+
+                document.getElementById("clientEmail").textContent =
+                    client.email || "-";
+
+
+                /* AFFICHAGE DU SUJET */
+
+                document.getElementById("clientSubject").textContent =
+                    client.subject || "-";
+
+
+                /* AFFICHAGE DU MESSAGE */
+
+                document.getElementById("clientMessage").textContent =
+                    client.message || "-";
+
+
+                /* MESSAGE PERSONNALISÉ */
+
+                document.getElementById("clientGreeting").textContent =
+                    client.name ? client.name : "cher visiteur";
+
+
+                /* PRÉPARATION DU MESSAGE WHATSAPP */
+
+                const whatsappMessage =
+
+                    "Bonjour Odilon, je viens de vous envoyer une demande depuis votre portfolio ODIWEB.\n\n" +
+
+                    "Nom : " + (client.name || "") + "\n" +
+
+                    "E-mail : " + (client.email || "") + "\n" +
+
+                    "Sujet : " + (client.subject || "") + "\n" +
+
+                    "Message : " + (client.message || "");
+
+
+                /* LIEN WHATSAPP PERSONNALISÉ */
+
+                document.getElementById("thankyouWhatsapp").href =
+
+                    "https://wa.me/2290150510966?text=" +
+
+                    encodeURIComponent(whatsappMessage);
+
+
+            } catch (error) {
+
+                console.error(
+                    "Erreur de récupération des informations :",
+                    error
+                );
+
+                document.getElementById("clientSummary").style.display = "none";
+
+                document.getElementById("noClientData").style.display = "block";
+
+            }
+
+        } else {
+
+            /* AUCUNE INFORMATION DISPONIBLE */
+
+            document.getElementById("clientSummary").style.display = "none";
+
+            document.getElementById("noClientData").style.display = "block";
+
+        }
 
     </script>
+
 
 </body>
 
