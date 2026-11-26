@@ -1,15 +1,16 @@
 
-/* =================================================
+/* ==================================================
    ODIWEB PORTFOLIO
-   MAIN.JS - VERSION COMPLÈTE
+   MAIN.JS - CODE COMPLET
+   PARTIE 1/2
 ================================================== */
 
 document.addEventListener("DOMContentLoaded", function () {
 
 
-    /* ==================================================
+    /* ======================================
        1. MENU MOBILE
-    ================================================== */
+    ====================================== */
 
     const menuToggle = document.getElementById("menuToggle");
     const navMenu = document.getElementById("navMenu");
@@ -22,6 +23,8 @@ document.addEventListener("DOMContentLoaded", function () {
             menuToggle.classList.toggle("active");
 
         });
+
+        /* Fermer le menu après un clic */
 
         const navLinks = navMenu.querySelectorAll("a");
 
@@ -39,9 +42,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* ==================================================
+    /* ======================================
        2. ANNÉE AUTOMATIQUE DU FOOTER
-    ================================================== */
+    ====================================== */
 
     const currentYear = document.getElementById("currentYear");
 
@@ -52,9 +55,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* ==================================================
+    /* ======================================
        3. NAVIGATION FLUIDE
-    ================================================== */
+    ====================================== */
 
     const anchorLinks = document.querySelectorAll('a[href^="#"]');
 
@@ -88,71 +91,85 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
+    /* ======================================
+       FIN DE LA PARTIE 1
+    ====================================== */
+
     /* ==================================================
-       4. FORMULAIRE DE CONTACT - FORMSUBMIT
+       4. FORMULAIRE DE CONTACT - FORMSUBMIT AJAX
     ================================================== */
 
     const contactForm = document.getElementById("contactForm");
 
-    const contactStatus = document.getElementById("contactStatus");
-
-    const formSubmitURL =
-        "https://formsubmit.co/ajax/odilonlaly086@gmail.com";
-
-
     if (contactForm) {
+
+        const contactStatus = document.getElementById("contactStatus");
+
+        const submitButton =
+            contactForm.querySelector('[type="submit"]');
+
+        const formSubmitURL =
+            "https://formsubmit.co/ajax/odilonlaly086@gmail.com";
+
+        let formIsSubmitting = false;
+
+
+        /* AFFICHER UN MESSAGE */
+
+        function showContactMessage(message, color) {
+
+            if (!contactStatus) return;
+
+            contactStatus.textContent = message;
+            contactStatus.style.color = color;
+
+        }
+
+
+        /* ENVOI DU FORMULAIRE */
 
         contactForm.addEventListener("submit", async function (event) {
 
             event.preventDefault();
 
+            if (formIsSubmitting) return;
 
-            /* Récupération des informations */
+            if (!contactForm.reportValidity()) return;
 
-            const name = document.getElementById("contactName")?.value.trim() || "";
-
-            const email = document.getElementById("contactEmail")?.value.trim() || "";
-
-            const subject = document.getElementById("contactSubject")?.value.trim() || "";
-
-            const message = document.getElementById("contactMessage")?.value.trim() || "";
+            formIsSubmitting = true;
 
 
-            /* Vérification des champs */
+            /* RÉCUPÉRATION DES INFORMATIONS */
+
+            const name =
+                document.getElementById("contactName").value.trim();
+
+            const email =
+                document.getElementById("contactEmail").value.trim();
+
+            const subject =
+                document.getElementById("contactSubject").value.trim();
+
+            const message =
+                document.getElementById("contactMessage").value.trim();
+
+
+            /* VÉRIFICATION DES CHAMPS */
 
             if (!name || !email || !subject || !message) {
 
-                if (contactStatus) {
+                showContactMessage(
+                    "Veuillez remplir tous les champs.",
+                    "red"
+                );
 
-                    contactStatus.textContent =
-                        "Veuillez remplir tous les champs.";
-
-                }
+                formIsSubmitting = false;
 
                 return;
-
             }
 
 
-            /* Vérification de l'adresse email */
-
-            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-            if (!emailPattern.test(email)) {
-
-                if (contactStatus) {
-
-                    contactStatus.textContent =
-                        "Veuillez entrer une adresse email valide.";
-
-                }
-
-                return;
-
-            }
-
-
-            /* Enregistrement des informations pour merci.html */
+            /* ENREGISTREMENT POUR MERCI.HTML */
 
             const clientData = {
 
@@ -169,7 +186,7 @@ document.addEventListener("DOMContentLoaded", function () {
             );
 
 
-            /* Préparation des données */
+            /* PRÉPARATION DES DONNÉES */
 
             const formData = new FormData(contactForm);
 
@@ -184,14 +201,10 @@ document.addEventListener("DOMContentLoaded", function () {
             );
 
             formData.set("_template", "table");
-
             formData.set("_captcha", "false");
 
 
-            /* Désactivation du bouton */
-
-            const submitButton =
-                contactForm.querySelector('[type="submit"]');
+            /* DÉSACTIVATION DU BOUTON */
 
             const originalButtonText = submitButton
                 ? submitButton.textContent
@@ -200,20 +213,17 @@ document.addEventListener("DOMContentLoaded", function () {
             if (submitButton) {
 
                 submitButton.disabled = true;
-
                 submitButton.textContent = "Envoi en cours...";
 
             }
 
-            if (contactStatus) {
-
-                contactStatus.textContent =
-                    "Envoi de votre message...";
-
-            }
+            showContactMessage(
+                "Envoi de votre message...",
+                "#087DE0"
+            );
 
 
-            /* Envoi du formulaire */
+            /* ENVOI FORMSUBMIT */
 
             try {
 
@@ -221,72 +231,65 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     method: "POST",
 
-                    body: formData,
-
                     headers: {
-
                         "Accept": "application/json"
+                    },
 
-                    }
+                    body: formData
 
                 });
 
 
-                const result = await response.json();
+                const data = await response.json();
+
+                console.log("Réponse FormSubmit :", data);
 
 
                 if (
                     !response.ok ||
-                    result.success === false ||
-                    result.success === "false"
+                    String(data.success).toLowerCase() !== "true"
                 ) {
 
                     throw new Error(
-                        result.message || "Échec de l'envoi du formulaire."
+                        data.message ||
+                        "FormSubmit n'a pas accepté votre message."
                     );
 
                 }
 
 
-                /* Confirmation de l'envoi */
+                /* CONFIRMATION DE L'ENVOI */
 
-                if (contactStatus) {
-
-                    contactStatus.textContent =
-                        "Message envoyé avec succès !";
-
-                }
+                showContactMessage(
+                    "Votre message a été envoyé avec succès !",
+                    "green"
+                );
 
 
-                /* Redirection vers la page merci */
+                /* REDIRECTION VERS MERCI.HTML */
 
                 window.location.href = "merci.html";
 
 
-            
-} catch (error) {
+            } catch (error) {
 
-    console.error("Erreur FormSubmit :", error);
+                console.error("Erreur FormSubmit :", error);
 
-    if (contactStatus) {
+                showContactMessage(
+                    "Échec de l'envoi : " + error.message,
+                    "red"
+                );
 
-        contactStatus.textContent =
-            error.message || "Erreur inconnue. Veuillez réessayer.";
+                if (submitButton) {
 
-    }
+                    submitButton.disabled = false;
+                    submitButton.textContent = originalButtonText;
 
-    if (submitButton) {
+                }
 
-        submitButton.disabled = false;
+                formIsSubmitting = false;
 
-        submitButton.textContent = originalButtonText;
-
-    }
-
-}
-
-
-            
+            }
 
         });
 
@@ -312,7 +315,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 const isActive = item.classList.contains("active");
 
 
-                /* Fermer toutes les réponses */
+                /* FERMER TOUTES LES RÉPONSES */
 
                 faqItems.forEach(function (faqItem) {
 
@@ -322,15 +325,13 @@ document.addEventListener("DOMContentLoaded", function () {
                         faqItem.querySelector(".faq-answer");
 
                     if (faqAnswer) {
-
                         faqAnswer.style.maxHeight = null;
-
                     }
 
                 });
 
 
-                /* Ouvrir la réponse sélectionnée */
+                /* OUVRIR LA RÉPONSE SÉLECTIONNÉE */
 
                 if (!isActive) {
 
@@ -384,9 +385,7 @@ document.addEventListener("DOMContentLoaded", function () {
             },
 
             {
-
                 threshold: 0.12
-
             }
 
         );
@@ -439,7 +438,6 @@ document.addEventListener("DOMContentLoaded", function () {
             window.scrollTo({
 
                 top: 0,
-
                 behavior: "smooth"
 
             });
@@ -469,210 +467,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* ==================================================
-       9. CONFIRMATION DU CHARGEMENT
+       9. FIN DU MAIN.JS
     ================================================== */
 
     console.log(
         "ODIWEB PORTFOLIO : JavaScript chargé avec succès."
     );
 
-
 });
-
-/* ==========================================
-   FORMULAIRE ODIWEB - FORMSUBMIT AJAX
-========================================== */
-
-const contactForm = document.getElementById("contactForm");
-
-if (contactForm) {
-
-    const contactStatus = document.getElementById("contactStatus");
-
-    const formSubmitURL =
-        "https://formsubmit.co/ajax/odilonlaly086@gmail.com";
-
-    const submitButton =
-        contactForm.querySelector('[type="submit"]');
-
-    let formIsSubmitting = false;
-
-
-    /* AFFICHER UN MESSAGE */
-
-    function showContactMessage(message, color) {
-
-        if (!contactStatus) return;
-
-        contactStatus.textContent = message;
-        contactStatus.style.color = color;
-
-    }
-
-
-    /* ENVOI DU FORMULAIRE */
-
-    contactForm.addEventListener("submit", async function (event) {
-
-        event.preventDefault();
-
-        if (formIsSubmitting) return;
-
-        if (!contactForm.reportValidity()) return;
-
-        formIsSubmitting = true;
-
-
-        /* RÉCUPÉRATION DES INFORMATIONS */
-
-        const name =
-            document.getElementById("contactName").value.trim();
-
-        const email =
-            document.getElementById("contactEmail").value.trim();
-
-        const subject =
-            document.getElementById("contactSubject").value.trim();
-
-        const message =
-            document.getElementById("contactMessage").value.trim();
-
-
-        if (!name || !email || !subject || !message) {
-
-            showContactMessage(
-                "Veuillez remplir tous les champs.",
-                "red"
-            );
-
-            formIsSubmitting = false;
-
-            return;
-        }
-
-
-        /* ENREGISTREMENT POUR MERCI.HTML */
-
-        const clientData = {
-
-            name: name,
-            email: email,
-            subject: subject,
-            message: message
-
-        };
-
-        localStorage.setItem(
-            "odiweb-client-message",
-            JSON.stringify(clientData)
-        );
-
-
-        /* PRÉPARATION DE L'ENVOI */
-
-        const formData = new FormData(contactForm);
-
-        formData.set("name", name);
-        formData.set("email", email);
-        formData.set("subject", subject);
-        formData.set("message", message);
-
-        formData.set(
-            "_subject",
-            "Nouvelle demande depuis ODIWEB PORTFOLIO"
-        );
-
-        formData.set("_template", "table");
-        formData.set("_captcha", "false");
-
-
-        /* DÉSACTIVER LE BOUTON */
-
-        const originalButtonText = submitButton
-            ? submitButton.textContent
-            : "";
-
-        if (submitButton) {
-
-            submitButton.disabled = true;
-            submitButton.textContent = "Envoi en cours...";
-
-        }
-
-        showContactMessage(
-            "Envoi de votre message...",
-            "#087DE0"
-        );
-
-
-        /* ENVOI FORMSUBMIT */
-
-        try {
-
-            const response = await fetch(formSubmitURL, {
-
-                method: "POST",
-
-                headers: {
-                    "Accept": "application/json"
-                },
-
-                body: formData
-
-            });
-
-
-            const data = await response.json();
-
-            console.log("Réponse FormSubmit :", data);
-
-
-            if (
-                !response.ok ||
-                String(data.success).toLowerCase() !== "true"
-            ) {
-
-                throw new Error(
-                    data.message ||
-                    "FormSubmit n'a pas accepté votre message."
-                );
-
-            }
-
-
-            /* CONFIRMATION */
-
-            showContactMessage(
-                "Votre message a été envoyé avec succès !",
-                "green"
-            );
-
-
-            /* REDIRECTION */
-
-            window.location.href = "merci.html";
-
-
-        } catch (error) {
-
-            console.error("Erreur FormSubmit :", error);
-
-            showContactMessage(
-                "Échec de l'envoi : " + error.message,
-                "red"
-            );
-
-            if (submitButton) {
-
-                submitButton.disabled = false;
-                submitButton.textContent = originalButtonText;
-
-            }
-
-            formIsSubmitting = false;
-
-        }
-
-    });
-
-}
