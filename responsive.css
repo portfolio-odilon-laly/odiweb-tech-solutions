@@ -1,158 +1,447 @@
 
-/* =========================================
-   RESPONSIVE - TABLETTES ET PETITS ÉCRANS
-   ========================================= */
+/* ==========================================
+   ODIWEB PORTFOLIO
+   RESPONSIVE.CSS
+   PARTIE 1/3
+   GRANDS ÉCRANS ET ORDINATEURS
+========================================== */
 
-@media (max-width: 1024px) {
 
-    .container {
-        width: 90%;
+/* ==========================================
+   1. ÉCRANS LARGES
+========================================== */
+
+@media screen and (min-width: 1200px) {
+
+    .container,
+    .navbar,
+    .hero-container,
+    .footer-container,
+    .footer-bottom {
+        max-width: 1200px;
     }
 
     .hero {
-        padding-top: 120px;
-        padding-bottom: 70px;
+        min-height: 720px;
     }
 
-    .hero-content {
-        gap: 35px;
+    .hero-title {
+        font-size: 65px;
     }
 
-    .about-content {
-        gap: 35px;
+    .hero-image-wrapper {
+        width: 410px;
+        height: 470px;
     }
 
     .skills-grid,
     .services-grid {
-        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
     }
 
     .projects-grid {
-        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
     }
+
+}
+
+
+/* ==========================================
+   2. ORDINATEURS ET ÉCRANS MOYENS
+========================================== */
+
+@media screen and (min-width: 769px) and (max-width: 1199px) {
+
+    /* Conteneurs */
+
+    .container,
+    .navbar,
+    .hero-container,
+    .footer-container,
+    .footer-bottom {
+        width: 92%;
+    }
+
+
+    /* Navigation */
+
+    .nav-menu {
+        gap: 18px;
+    }
+
+    .nav-menu a {
+        font-size: 13px;
+    }
+
+    .logo span {
+        font-size: 21px;
+    }
+
+    .nav-actions {
+        gap: 10px;
+    }
+
+
+    /* Hero */
+
+    .hero-container {
+        gap: 35px;
+    }
+
+    .hero-title {
+        font-size: 52px;
+    }
+
+    .hero-image-wrapper {
+        width: 340px;
+        height: 420px;
+    }
+
+    .hero-tag-web {
+        left: -15px;
+    }
+
+    .hero-tag-design {
+        right: -15px;
+    }
+
+
+    /* À propos */
+
+    .about-container {
+        gap: 45px;
+    }
+
+    .about-image img {
+        height: 430px;
+    }
+
+
+    /* Compétences et services */
+
+    .skills-grid,
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+    }
+
+    .skill-card,
+    .service-card {
+        padding: 28px 22px;
+    }
+
+
+    /* Projets */
+
+    .projects-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    .project-image {
+        height: 210px;
+    }
+
+    .project-content {
+        padding: 20px;
+    }
+
+
+    /* Processus */
 
     .process-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(4, 1fr);
+        gap: 15px;
     }
 
-    .testimonials-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .process-card {
+        padding: 28px 18px;
     }
+
+
+    /* Avantages */
+
+    .advantages-container {
+        gap: 35px;
+    }
+
+
+    /* Contact */
 
     .contact-container {
         gap: 30px;
     }
 
-    .footer-container {
-        grid-template-columns: repeat(2, 1fr);
+    .contact-form {
+        padding: 30px;
     }
+
+
+    /* Footer */
+
+    .footer-container {
+        gap: 30px;
+    }
+
 }
 
-/* =========================================
-   RESPONSIVE - TABLETTES ET TÉLÉPHONES
-   ========================================= */
 
-@media (max-width: 768px) {
+/* ==========================================
+   3. PRÉPARATION DES GRILLES
+========================================== */
 
-    .container {
-        width: 92%;
-    }
-
-    section {
-        padding: 65px 0;
-    }
-
-    .hero {
-        min-height: auto;
-        padding: 120px 0 65px;
-    }
-
-    .hero-content,
-    .about-content,
-    .contact-container {
-        grid-template-columns: 1fr;
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .hero-content {
-        gap: 35px;
-    }
-
-    .hero-text,
-    .about-text {
-        text-align: center;
-    }
-
-    .hero-buttons {
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    .hero-image,
-    .about-image {
-        width: 100%;
-        max-width: 500px;
-        margin: auto;
-    }
+@media screen and (min-width: 769px) {
 
     .skills-grid,
     .services-grid,
     .projects-grid,
-    .process-grid,
-    .testimonials-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .contact-container {
-        gap: 35px;
-    }
-
-    .contact-form,
-    .order-form {
+    .process-grid {
         width: 100%;
     }
 
-    .footer-container {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
+    .about-container,
+    .advantages-container,
+    .contact-container {
+        width: 90%;
+        max-width: var(--container-width);
+        margin: 0 auto;
     }
 
-    .section-title {
-        font-size: 30px;
-    }
-
-    .section-description {
-        font-size: 15px;
-    }
-
-    .final-cta {
-        text-align: center;
-    }
 }
 
-/* =========================================
-   RESPONSIVE - PETITS TÉLÉPHONES
-   ========================================= */
+/* ==========================================
+   ODIWEB PORTFOLIO
+   RESPONSIVE.CSS
+   PARTIE 2/3
+   TABLETTES ET TÉLÉPHONES
+========================================== */
 
-@media (max-width: 480px) {
 
-    .container {
+/* ==========================================
+   1. TABLETTES
+========================================== */
+
+@media screen and (max-width: 768px) {
+
+    /* Conteneurs */
+
+    .container,
+    .navbar,
+    .hero-container,
+    .footer-container,
+    .footer-bottom {
         width: 90%;
     }
 
-    section {
-        padding: 50px 0;
+
+    /* Navigation */
+
+    .navbar {
+        height: 75px;
     }
 
+    .logo img {
+        max-width: 45px;
+        height: auto;
+    }
+
+    .logo span {
+        font-size: 20px;
+    }
+
+    .nav-menu {
+        position: absolute;
+        top: 75px;
+        left: 0;
+        width: 100%;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 22px;
+        padding: 30px 20px;
+        background: var(--white);
+        box-shadow: var(--shadow);
+        z-index: 999;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-actions {
+        gap: 12px;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+
+    /* Hero */
+
     .hero {
-        padding-top: 105px;
-        padding-bottom: 50px;
+        padding: 120px 0 70px;
+    }
+
+    .hero-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 55px;
+    }
+
+    .hero-content {
+        order: 1;
+    }
+
+    .hero-visual {
+        order: 2;
+        display: flex;
+        justify-content: center;
     }
 
     .hero-title {
-        font-size: 32px;
+        font-size: 48px;
+    }
+
+    .hero-description {
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-image-wrapper {
+        width: 320px;
+        height: 380px;
+    }
+
+    .hero-tag-web {
+        left: -10px;
+    }
+
+    .hero-tag-design {
+        right: -10px;
+    }
+
+    .scroll-indicator {
+        display: none;
+    }
+
+
+    /* À propos */
+
+    .about-container {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .about-image {
+        max-width: 420px;
+        margin: 0 auto;
+    }
+
+    .about-image img {
+        width: 100%;
+        height: 420px;
+        object-fit: cover;
+    }
+
+
+    /* Compétences et services */
+
+    .skills-grid,
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+
+    /* Projets */
+
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+
+    /* Processus */
+
+    .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+
+    /* Avantages */
+
+    .advantages-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+
+    /* FAQ */
+
+    .faq-container {
+        max-width: 100%;
+    }
+
+
+    /* Contact */
+
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+
+    /* Footer */
+
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 35px;
+    }
+
+}
+
+
+/* ==========================================
+   2. TÉLÉPHONES
+========================================== */
+
+@media screen and (max-width: 576px) {
+
+    /* Navigation */
+
+    .navbar {
+        width: 92%;
+    }
+
+    .logo span {
+        font-size: 17px;
+    }
+
+    .nav-actions {
+        gap: 8px;
+    }
+
+
+    /* Hero */
+
+    .hero {
+        padding-top: 105px;
+    }
+
+    .hero-title {
+        font-size: 38px;
         line-height: 1.2;
+    }
+
+    .hero-subtitle {
+        font-size: 16px;
     }
 
     .hero-description {
@@ -161,56 +450,378 @@
 
     .hero-buttons {
         flex-direction: column;
-        align-items: stretch;
+        align-items: center;
     }
 
-    .hero-buttons .btn {
+    .hero-buttons a {
         width: 100%;
-    }
-
-    .section-title {
-        font-size: 26px;
-    }
-
-    .skills-grid,
-    .services-grid,
-    .projects-grid,
-    .process-grid,
-    .testimonials-grid,
-    .footer-container {
-        grid-template-columns: 1fr;
-    }
-
-    .project-card,
-    .service-card,
-    .skill-card {
-        width: 100%;
-    }
-
-    .contact-form,
-    .order-form {
-        padding: 20px;
-    }
-
-    .form-group input,
-    .form-group textarea,
-    .form-group select {
-        width: 100%;
-        font-size: 14px;
-    }
-
-    .footer {
-        text-align: center;
-    }
-
-    .footer-socials {
+        max-width: 280px;
         justify-content: center;
     }
 
+    .hero-image-wrapper {
+        width: 270px;
+        height: 330px;
+    }
+
+    .hero-tag-web,
+    .hero-tag-design {
+        font-size: 11px;
+        padding: 10px 13px;
+    }
+
+
+    /* À propos */
+
+    .about-image img {
+        height: 350px;
+    }
+
+    .about-infos {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Compétences et services */
+
+    .skills-grid,
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Projets */
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-image {
+        height: 230px;
+    }
+
+    .projects-filters {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+
+    /* Processus */
+
+    .process-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Avantages */
+
+    .advantages-card {
+        padding: 25px 20px;
+    }
+
+
+    /* FAQ */
+
+    .faq-question {
+        font-size: 15px;
+    }
+
+
+    /* Contact */
+
+    .contact-form {
+        padding: 25px 20px;
+    }
+
+
+    /* Footer */
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+
+    /* WhatsApp */
+
     .whatsapp-float {
-        width: 50px;
-        height: 50px;
+        width: 52px;
+        height: 52px;
         right: 15px;
         bottom: 15px;
     }
+
+}
+
+/* ==========================================
+   ODIWEB PORTFOLIO
+   RESPONSIVE.CSS
+   PARTIE 3/3
+   PETITS TÉLÉPHONES ET AJUSTEMENTS FINAUX
+========================================== */
+
+
+/* ==========================================
+   1. PETITS TÉLÉPHONES
+========================================== */
+
+@media screen and (max-width: 400px) {
+
+    /* Conteneurs */
+
+    .container,
+    .hero-container,
+    .footer-container,
+    .footer-bottom {
+        width: 92%;
+    }
+
+
+    /* Navigation */
+
+    .navbar {
+        width: 94%;
+    }
+
+    .logo img {
+        max-width: 38px;
+    }
+
+    .logo span {
+        font-size: 15px;
+    }
+
+    .menu-toggle {
+        font-size: 22px;
+    }
+
+
+    /* Hero */
+
+    .hero {
+        padding: 100px 0 55px;
+    }
+
+    .hero-title {
+        font-size: 32px;
+    }
+
+    .hero-greeting {
+        font-size: 13px;
+    }
+
+    .hero-subtitle {
+        font-size: 14px;
+    }
+
+    .hero-description {
+        font-size: 13px;
+        line-height: 1.7;
+    }
+
+    .hero-image-wrapper {
+        width: 235px;
+        height: 290px;
+    }
+
+    .hero-tag-web {
+        left: -8px;
+    }
+
+    .hero-tag-design {
+        right: -8px;
+    }
+
+    .hero-tag-web,
+    .hero-tag-design {
+        font-size: 10px;
+        padding: 8px 10px;
+    }
+
+
+    /* Titres des sections */
+
+    .section-title {
+        font-size: 27px;
+    }
+
+    .section-subtitle {
+        font-size: 13px;
+    }
+
+
+    /* À propos */
+
+    .about-image img {
+        height: 300px;
+    }
+
+    .about-info-item {
+        padding: 15px;
+    }
+
+
+    /* Cartes */
+
+    .skill-card,
+    .service-card,
+    .process-card {
+        padding: 25px 18px;
+    }
+
+    .project-image {
+        height: 200px;
+    }
+
+    .project-content {
+        padding: 18px;
+    }
+
+
+    /* Filtres des projets */
+
+    .filter-btn {
+        font-size: 12px;
+        padding: 9px 13px;
+    }
+
+
+    /* Avantages */
+
+    .advantages-card {
+        padding: 22px 16px;
+    }
+
+
+    /* FAQ */
+
+    .faq-question {
+        font-size: 14px;
+        gap: 10px;
+    }
+
+    .faq-answer {
+        font-size: 13px;
+    }
+
+
+    /* Contact */
+
+    .contact-form {
+        padding: 20px 15px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 13px;
+    }
+
+
+    /* Boutons */
+
+    .btn {
+        font-size: 13px;
+        padding: 12px 18px;
+    }
+
+
+    /* Pied de page */
+
+    .footer {
+        padding-top: 55px;
+    }
+
+    .footer-column h3 {
+        font-size: 16px;
+    }
+
+    .footer-column a,
+    .footer-column p {
+        font-size: 13px;
+    }
+
+}
+
+
+/* ==========================================
+   2. TRÈS PETITS ÉCRANS
+========================================== */
+
+@media screen and (max-width: 340px) {
+
+    .logo span {
+        font-size: 13px;
+    }
+
+    .hero-title {
+        font-size: 29px;
+    }
+
+    .hero-image-wrapper {
+        width: 210px;
+        height: 265px;
+    }
+
+    .hero-buttons a {
+        max-width: 240px;
+    }
+
+    .section-title {
+        font-size: 24px;
+    }
+
+    .contact-form {
+        padding: 18px 12px;
+    }
+
+}
+
+
+/* ==========================================
+   3. SÉCURITÉ CONTRE LES DÉBORDEMENTS
+========================================== */
+
+@media screen and (max-width: 768px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    img {
+        max-width: 100%;
+    }
+
+    .hero-container,
+    .about-container,
+    .advantages-container,
+    .contact-container {
+        min-width: 0;
+    }
+
+    .hero-image-wrapper {
+        max-width: 100%;
+    }
+
+    .hero-profile-image {
+        max-width: 100%;
+        object-fit: cover;
+    }
+
+    .hero-tag-web,
+    .hero-tag-design {
+        max-width: 45%;
+    }
+
+    .contact-form,
+    .contact-info {
+        min-width: 0;
+    }
+
 }
