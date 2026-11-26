@@ -417,7 +417,7 @@
     /* Navigation */
 
     .navbar {
-        width: 92%;
+        width: 80%;
     }
 
     .logo span {
@@ -460,7 +460,7 @@
     }
 
     .hero-image-wrapper {
-        width: 270px;
+        width: 200px;
         height: 330px;
     }
 
@@ -474,7 +474,7 @@
     /* À propos */
 
     .about-image img {
-        height: 350px;
+        height: 300px;
     }
 
     .about-infos {
