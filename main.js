@@ -1,22 +1,15 @@
 
-/* ==========================================
+/* ==================================================
    ODIWEB PORTFOLIO
-   MAIN.JS
-   PARTIE 1/3
-   INITIALISATION ET NAVIGATION
-========================================== */
-
-
-/* ==========================================
-   1. INITIALISATION DU SITE
-========================================== */
+   MAIN.JS - VERSION COMPLÈTE
+================================================== */
 
 document.addEventListener("DOMContentLoaded", function () {
 
 
-    /* ======================================
-       2. MENU MOBILE
-    ====================================== */
+    /* ==================================================
+       1. MENU MOBILE
+    ================================================== */
 
     const menuToggle = document.getElementById("menuToggle");
     const navMenu = document.getElementById("navMenu");
@@ -26,13 +19,9 @@ document.addEventListener("DOMContentLoaded", function () {
         menuToggle.addEventListener("click", function () {
 
             navMenu.classList.toggle("active");
-
             menuToggle.classList.toggle("active");
 
         });
-
-
-        /* Fermer le menu après un clic */
 
         const navLinks = navMenu.querySelectorAll("a");
 
@@ -41,7 +30,6 @@ document.addEventListener("DOMContentLoaded", function () {
             link.addEventListener("click", function () {
 
                 navMenu.classList.remove("active");
-
                 menuToggle.classList.remove("active");
 
             });
@@ -51,9 +39,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* ======================================
-       3. ANNÉE AUTOMATIQUE DU FOOTER
-    ====================================== */
+    /* ==================================================
+       2. ANNÉE AUTOMATIQUE DU FOOTER
+    ================================================== */
 
     const currentYear = document.getElementById("currentYear");
 
@@ -64,9 +52,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* ======================================
-       4. NAVIGATION FLUIDE
-    ====================================== */
+    /* ==================================================
+       3. NAVIGATION FLUIDE
+    ================================================== */
 
     const anchorLinks = document.querySelectorAll('a[href^="#"]');
 
@@ -87,8 +75,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 event.preventDefault();
 
                 targetSection.scrollIntoView({
+
                     behavior: "smooth",
                     block: "start"
+
                 });
 
             }
@@ -98,207 +88,199 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-});
+    /* ==================================================
+       4. FORMULAIRE DE CONTACT - FORMSUBMIT
+    ================================================== */
 
-/* ==========================================
-   ODIWEB PORTFOLIO
-   MAIN.JS
-   PARTIE 2/3
-   FORMULAIRE DE CONTACT - FORMSUBMIT
-========================================== */
+    const contactForm = document.getElementById("contactForm");
 
+    const contactStatus = document.getElementById("contactStatus");
 
-/* ==========================================
-   1. CONFIGURATION DU FORMULAIRE
-========================================== */
-
-const contactForm = document.getElementById("contactForm");
-
-const contactStatus = document.getElementById("contactStatus");
-
-const formSubmitURL = "https://formsubmit.co/ajax/odilonlaly086@gmail.com";
+    const formSubmitURL =
+        "https://formsubmit.co/ajax/odilonlaly086@gmail.com";
 
 
-/* ==========================================
-   2. ENVOI DU FORMULAIRE
-========================================== */
+    if (contactForm) {
 
-if (contactForm) {
+        contactForm.addEventListener("submit", async function (event) {
 
-    contactForm.addEventListener("submit", async function (event) {
-
-        event.preventDefault();
+            event.preventDefault();
 
 
-        /* Récupération des informations */
+            /* Récupération des informations */
 
-        const name = document.getElementById("contactName").value.trim();
+            const name = document.getElementById("contactName")?.value.trim() || "";
 
-        const email = document.getElementById("contactEmail").value.trim();
+            const email = document.getElementById("contactEmail")?.value.trim() || "";
 
-        const subject = document.getElementById("contactSubject").value.trim();
+            const subject = document.getElementById("contactSubject")?.value.trim() || "";
 
-        const message = document.getElementById("contactMessage").value.trim();
-
-
-        /* Vérification des champs */
-
-        if (!name || !email || !subject || !message) {
-
-            if (contactStatus) {
-                contactStatus.textContent = "Veuillez remplir tous les champs.";
-            }
-
-            return;
-
-        }
+            const message = document.getElementById("contactMessage")?.value.trim() || "";
 
 
-        /* Préparation des données */
+            /* Vérification des champs */
 
-        const formData = new FormData(contactForm);
+            if (!name || !email || !subject || !message) {
 
-        formData.set("name", name);
-        formData.set("email", email);
-        formData.set("subject", subject);
-        formData.set("message", message);
+                if (contactStatus) {
 
-        formData.set("_subject", "Nouvelle demande depuis ODIWEB PORTFOLIO");
+                    contactStatus.textContent =
+                        "Veuillez remplir tous les champs.";
 
-        formData.set("_template", "table");
-
-        formData.set("_captcha", "false");
-
-
-        /* Désactiver le bouton pendant l'envoi */
-
-        const submitButton = contactForm.querySelector('[type="submit"]');
-
-        const originalButtonText = submitButton
-            ? submitButton.textContent
-            : "";
-
-        if (submitButton) {
-            submitButton.disabled = true;
-            submitButton.textContent = "Envoi en cours...";
-        }
-
-        if (contactStatus) {
-            contactStatus.textContent = "Envoi de votre message...";
-        }
-
-
-        /* Envoyer les informations avec FormSubmit */
-
-        try {
-
-            const response = await fetch(formSubmitURL, {
-
-                method: "POST",
-
-                body: formData,
-
-                headers: {
-                    "Accept": "application/json"
                 }
 
-            });
-
-
-            const result = await response.json();
-
-
-            if (!response.ok || result.success === false) {
-
-                throw new Error("Échec de l'envoi du formulaire.");
+                return;
 
             }
 
 
-            /* Enregistrer le nom pour la page merci */
+            /* Vérification de l'adresse email */
 
-            sessionStorage.setItem("odiwebClientName", name);
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!emailPattern.test(email)) {
+
+                if (contactStatus) {
+
+                    contactStatus.textContent =
+                        "Veuillez entrer une adresse email valide.";
+
+                }
+
+                return;
+
+            }
 
 
-            /* Redirection après confirmation de l'envoi */
+            /* Enregistrement des informations pour merci.html */
 
-            window.location.href = "merci.html";
+            const clientData = {
+
+                name: name,
+                email: email,
+                subject: subject,
+                message: message
+
+            };
+
+            localStorage.setItem(
+                "odiweb-client-message",
+                JSON.stringify(clientData)
+            );
 
 
-        } catch (error) {
+            /* Préparation des données */
 
-            console.error("Erreur FormSubmit :", error);
+            const formData = new FormData(contactForm);
+
+            formData.set("name", name);
+            formData.set("email", email);
+            formData.set("subject", subject);
+            formData.set("message", message);
+
+            formData.set(
+                "_subject",
+                "Nouvelle demande depuis ODIWEB PORTFOLIO"
+            );
+
+            formData.set("_template", "table");
+
+            formData.set("_captcha", "false");
+
+
+            /* Désactivation du bouton */
+
+            const submitButton =
+                contactForm.querySelector('[type="submit"]');
+
+            const originalButtonText = submitButton
+                ? submitButton.textContent
+                : "";
+
+            if (submitButton) {
+
+                submitButton.disabled = true;
+
+                submitButton.textContent = "Envoi en cours...";
+
+            }
 
             if (contactStatus) {
 
                 contactStatus.textContent =
-                    "Une erreur est survenue. Veuillez réessayer.";
+                    "Envoi de votre message...";
 
             }
 
-            if (submitButton) {
 
-                submitButton.disabled = false;
+            /* Envoi du formulaire */
 
-                submitButton.textContent = originalButtonText;
+            try {
 
-            }
+                const response = await fetch(formSubmitURL, {
 
-        }
+                    method: "POST",
 
-    });
+                    body: formData,
 
-}
+                    headers: {
 
-/* ==========================================
-   ODIWEB PORTFOLIO
-   MAIN.JS
-   PARTIE 3/3
-   FAQ ET INTERACTIONS FINALES
-========================================== */
+                        "Accept": "application/json"
+
+                    }
+
+                });
 
 
-/* ==========================================
-   1. GESTION DE LA FAQ
-========================================== */
-
-const faqItems = document.querySelectorAll(".faq-item");
-
-faqItems.forEach(function (item) {
-
-    const question = item.querySelector(".faq-question");
-
-    const answer = item.querySelector(".faq-answer");
-
-    if (question && answer) {
-
-        question.addEventListener("click", function () {
-
-            const isActive = item.classList.contains("active");
+                const result = await response.json();
 
 
-            /* Fermer toutes les réponses */
+                if (
+                    !response.ok ||
+                    result.success === false ||
+                    result.success === "false"
+                ) {
 
-            faqItems.forEach(function (faqItem) {
+                    throw new Error(
+                        result.message || "Échec de l'envoi du formulaire."
+                    );
 
-                faqItem.classList.remove("active");
-
-                const faqAnswer = faqItem.querySelector(".faq-answer");
-
-                if (faqAnswer) {
-                    faqAnswer.style.maxHeight = null;
                 }
 
-            });
+
+                /* Confirmation de l'envoi */
+
+                if (contactStatus) {
+
+                    contactStatus.textContent =
+                        "Message envoyé avec succès !";
+
+                }
 
 
-            /* Ouvrir la réponse sélectionnée */
+                /* Redirection vers la page merci */
 
-            if (!isActive) {
+                window.location.href = "merci.html";
 
-                item.classList.add("active");
 
-                answer.style.maxHeight = answer.scrollHeight + "px";
+            } catch (error) {
+
+                console.error("Erreur FormSubmit :", error);
+
+                if (contactStatus) {
+
+                    contactStatus.textContent =
+                        "Une erreur est survenue. Veuillez réessayer.";
+
+                }
+
+                if (submitButton) {
+
+                    submitButton.disabled = false;
+
+                    submitButton.textContent = originalButtonText;
+
+                }
 
             }
 
@@ -306,138 +288,189 @@ faqItems.forEach(function (item) {
 
     }
 
-});
+
+    /* ==================================================
+       5. GESTION DE LA FAQ
+    ================================================== */
+
+    const faqItems = document.querySelectorAll(".faq-item");
+
+    faqItems.forEach(function (item) {
+
+        const question = item.querySelector(".faq-question");
+
+        const answer = item.querySelector(".faq-answer");
+
+        if (question && answer) {
+
+            question.addEventListener("click", function () {
+
+                const isActive = item.classList.contains("active");
 
 
-/* ==========================================
-   2. ANIMATION AU DÉFILEMENT
-========================================== */
+                /* Fermer toutes les réponses */
 
-const revealElements = document.querySelectorAll(
-    ".skill-card, .service-card, .project-card, .process-card, .advantages-card"
-);
+                faqItems.forEach(function (faqItem) {
 
-if ("IntersectionObserver" in window) {
+                    faqItem.classList.remove("active");
 
-    const revealObserver = new IntersectionObserver(function (entries, observer) {
+                    const faqAnswer =
+                        faqItem.querySelector(".faq-answer");
 
-        entries.forEach(function (entry) {
+                    if (faqAnswer) {
 
-            if (entry.isIntersecting) {
+                        faqAnswer.style.maxHeight = null;
 
-                entry.target.classList.add("visible");
+                    }
 
-                observer.unobserve(entry.target);
-
-            }
-
-        });
-
-    }, {
-        threshold: 0.12
-    });
+                });
 
 
-    revealElements.forEach(function (element) {
+                /* Ouvrir la réponse sélectionnée */
 
-        revealObserver.observe(element);
+                if (!isActive) {
 
-    });
+                    item.classList.add("active");
 
-} else {
+                    answer.style.maxHeight =
+                        answer.scrollHeight + "px";
 
-    revealElements.forEach(function (element) {
+                }
 
-        element.classList.add("visible");
-
-    });
-
-}
-
-
-/* ==========================================
-   3. BOUTON RETOUR EN HAUT
-========================================== */
-
-const backToTop = document.querySelector(".back-to-top");
-
-if (backToTop) {
-
-    window.addEventListener("scroll", function () {
-
-        if (window.scrollY > 500) {
-
-            backToTop.classList.add("show");
-
-        } else {
-
-            backToTop.classList.remove("show");
+            });
 
         }
 
     });
 
 
-    backToTop.addEventListener("click", function (event) {
+    /* ==================================================
+       6. ANIMATION AU DÉFILEMENT
+    ================================================== */
 
-        event.preventDefault();
+    const revealElements = document.querySelectorAll(
 
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
+        ".skill-card, " +
+        ".service-card, " +
+        ".project-card, " +
+        ".process-card, " +
+        ".advantages-card"
 
-    });
-
-}
-
-
-/* ==========================================
-   4. LIEN WHATSAPP
-========================================== */
-
-const whatsappButton = document.querySelector(".whatsapp-float");
-
-if (whatsappButton) {
-
-    whatsappButton.setAttribute("target", "_blank");
-
-    whatsappButton.setAttribute("rel", "noopener noreferrer");
-
-}
+    );
 
 
-/* ==========================================
-   5. FIN DU MAIN.JS
-========================================== */
+    if ("IntersectionObserver" in window) {
 
-console.log("ODIWEB PORTFOLIO : JavaScript chargé avec succès.");
+        const revealObserver = new IntersectionObserver(
 
+            function (entries, observer) {
 
+                entries.forEach(function (entry) {
 
-/* =====================================
-   ENREGISTREMENT DES INFORMATIONS CLIENT
-===================================== */
+                    if (entry.isIntersecting) {
 
-const contactForm = document.getElementById("contactForm");
+                        entry.target.classList.add("visible");
 
-if (contactForm) {
+                        observer.unobserve(entry.target);
 
-    contactForm.addEventListener("submit", function () {
+                    }
 
-        const clientData = {
-            name: document.getElementById("contactName").value.trim(),
-            email: document.getElementById("contactEmail").value.trim(),
-            subject: document.getElementById("contactSubject").value.trim(),
-            message: document.getElementById("contactMessage").value.trim()
-        };
+                });
 
-        localStorage.setItem(
-            "odiweb-client-message",
-            JSON.stringify(clientData)
+            },
+
+            {
+
+                threshold: 0.12
+
+            }
+
         );
 
-    });
 
-}
+        revealElements.forEach(function (element) {
 
+            revealObserver.observe(element);
+
+        });
+
+    } else {
+
+        revealElements.forEach(function (element) {
+
+            element.classList.add("visible");
+
+        });
+
+    }
+
+
+    /* ==================================================
+       7. BOUTON RETOUR EN HAUT
+    ================================================== */
+
+    const backToTop = document.querySelector(".back-to-top");
+
+    if (backToTop) {
+
+        window.addEventListener("scroll", function () {
+
+            if (window.scrollY > 500) {
+
+                backToTop.classList.add("show");
+
+            } else {
+
+                backToTop.classList.remove("show");
+
+            }
+
+        });
+
+
+        backToTop.addEventListener("click", function (event) {
+
+            event.preventDefault();
+
+            window.scrollTo({
+
+                top: 0,
+
+                behavior: "smooth"
+
+            });
+
+        });
+
+    }
+
+
+    /* ==================================================
+       8. LIEN WHATSAPP
+    ================================================== */
+
+    const whatsappButton =
+        document.querySelector(".whatsapp-float");
+
+    if (whatsappButton) {
+
+        whatsappButton.setAttribute("target", "_blank");
+
+        whatsappButton.setAttribute(
+            "rel",
+            "noopener noreferrer"
+        );
+
+    }
+
+
+    /* ==================================================
+       9. CONFIRMATION DU CHARGEMENT
+    ================================================== */
+
+    console.log(
+        "ODIWEB PORTFOLIO : JavaScript chargé avec succès."
+    );
+
+
+});
