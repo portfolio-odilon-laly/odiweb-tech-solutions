@@ -1,39 +1,22 @@
 
-/* =========================================
-   ODIWEB TECH SOLUTIONS
-   FICHIER PRINCIPAL JAVASCRIPT
-   ========================================= */
+/* ==========================================
+   ODIWEB PORTFOLIO
+   MAIN.JS
+   PARTIE 1/3
+   INITIALISATION ET NAVIGATION
+========================================== */
+
+
+/* ==========================================
+   1. INITIALISATION DU SITE
+========================================== */
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    /* =====================================
-       1. PRELOADER - ÉCRAN DE CHARGEMENT
-       ===================================== */
 
-    function hidePreloader() {
-        const preloader = document.querySelector("#preloader, .preloader");
-
-        if (preloader) {
-            preloader.style.opacity = "0";
-            preloader.style.visibility = "hidden";
-            preloader.style.pointerEvents = "none";
-
-            setTimeout(function () {
-                preloader.style.display = "none";
-            }, 500);
-        }
-    }
-
-    // Masquer le preloader après le chargement
-    window.addEventListener("load", hidePreloader);
-
-    // Sécurité : éviter que le preloader reste bloqué
-    setTimeout(hidePreloader, 4000);
-
-
-    /* =====================================
+    /* ======================================
        2. MENU MOBILE
-       ===================================== */
+    ====================================== */
 
     const menuToggle = document.getElementById("menuToggle");
     const navMenu = document.getElementById("navMenu");
@@ -43,15 +26,14 @@ document.addEventListener("DOMContentLoaded", function () {
         menuToggle.addEventListener("click", function () {
 
             navMenu.classList.toggle("active");
+
             menuToggle.classList.toggle("active");
-
-            const isOpen = navMenu.classList.contains("active");
-
-            menuToggle.setAttribute("aria-expanded", isOpen);
 
         });
 
-        // Fermer le menu après un clic sur un lien
+
+        /* Fermer le menu après un clic */
+
         const navLinks = navMenu.querySelectorAll("a");
 
         navLinks.forEach(function (link) {
@@ -59,53 +41,52 @@ document.addEventListener("DOMContentLoaded", function () {
             link.addEventListener("click", function () {
 
                 navMenu.classList.remove("active");
-                menuToggle.classList.remove("active");
 
-                menuToggle.setAttribute("aria-expanded", "false");
+                menuToggle.classList.remove("active");
 
             });
-
-        });
-
-        // Fermer le menu en cliquant à l'extérieur
-        document.addEventListener("click", function (event) {
-
-            if (
-                !menuToggle.contains(event.target) &&
-                !navMenu.contains(event.target)
-            ) {
-
-                navMenu.classList.remove("active");
-                menuToggle.classList.remove("active");
-
-                menuToggle.setAttribute("aria-expanded", "false");
-
-            }
 
         });
 
     }
 
 
-    /* =====================================
-       3. DÉFILEMENT FLUIDE
-       ===================================== */
+    /* ======================================
+       3. ANNÉE AUTOMATIQUE DU FOOTER
+    ====================================== */
 
-    document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+    const currentYear = document.getElementById("currentYear");
+
+    if (currentYear) {
+
+        currentYear.textContent = new Date().getFullYear();
+
+    }
+
+
+    /* ======================================
+       4. NAVIGATION FLUIDE
+    ====================================== */
+
+    const anchorLinks = document.querySelectorAll('a[href^="#"]');
+
+    anchorLinks.forEach(function (link) {
 
         link.addEventListener("click", function (event) {
 
-            const targetId = this.getAttribute("href");
+            const targetId = link.getAttribute("href");
 
-            if (!targetId || targetId === "#") return;
+            if (!targetId || targetId === "#") {
+                return;
+            }
 
-            const target = document.querySelector(targetId);
+            const targetSection = document.querySelector(targetId);
 
-            if (target) {
+            if (targetSection) {
 
                 event.preventDefault();
 
-                target.scrollIntoView({
+                targetSection.scrollIntoView({
                     behavior: "smooth",
                     block: "start"
                 });
@@ -117,86 +98,318 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    /* =====================================
-       4. FAQ - QUESTIONS FRÉQUENTES
-       ===================================== */
+});
 
-    const faqItems = document.querySelectorAll(".faq-item");
+/* ==========================================
+   ODIWEB PORTFOLIO
+   MAIN.JS
+   PARTIE 2/3
+   FORMULAIRE DE CONTACT - FORMSUBMIT
+========================================== */
 
-    faqItems.forEach(function (item) {
 
-        const question = item.querySelector(".faq-question");
+/* ==========================================
+   1. CONFIGURATION DU FORMULAIRE
+========================================== */
 
-        if (question) {
+const contactForm = document.getElementById("contactForm");
 
-            question.addEventListener("click", function () {
+const contactStatus = document.getElementById("contactStatus");
 
-                const isActive = item.classList.contains("active");
+const formSubmitURL = "https://formsubmit.co/ajax/odilonlaly086@gmail.com";
 
-                faqItems.forEach(function (otherItem) {
-                    otherItem.classList.remove("active");
-                });
 
-                if (!isActive) {
-                    item.classList.add("active");
+/* ==========================================
+   2. ENVOI DU FORMULAIRE
+========================================== */
+
+if (contactForm) {
+
+    contactForm.addEventListener("submit", async function (event) {
+
+        event.preventDefault();
+
+
+        /* Récupération des informations */
+
+        const name = document.getElementById("contactName").value.trim();
+
+        const email = document.getElementById("contactEmail").value.trim();
+
+        const subject = document.getElementById("contactSubject").value.trim();
+
+        const message = document.getElementById("contactMessage").value.trim();
+
+
+        /* Vérification des champs */
+
+        if (!name || !email || !subject || !message) {
+
+            if (contactStatus) {
+                contactStatus.textContent = "Veuillez remplir tous les champs.";
+            }
+
+            return;
+
+        }
+
+
+        /* Préparation des données */
+
+        const formData = new FormData(contactForm);
+
+        formData.set("name", name);
+        formData.set("email", email);
+        formData.set("subject", subject);
+        formData.set("message", message);
+
+        formData.set("_subject", "Nouvelle demande depuis ODIWEB PORTFOLIO");
+
+        formData.set("_template", "table");
+
+        formData.set("_captcha", "false");
+
+
+        /* Désactiver le bouton pendant l'envoi */
+
+        const submitButton = contactForm.querySelector('[type="submit"]');
+
+        const originalButtonText = submitButton
+            ? submitButton.textContent
+            : "";
+
+        if (submitButton) {
+            submitButton.disabled = true;
+            submitButton.textContent = "Envoi en cours...";
+        }
+
+        if (contactStatus) {
+            contactStatus.textContent = "Envoi de votre message...";
+        }
+
+
+        /* Envoyer les informations avec FormSubmit */
+
+        try {
+
+            const response = await fetch(formSubmitURL, {
+
+                method: "POST",
+
+                body: formData,
+
+                headers: {
+                    "Accept": "application/json"
                 }
 
             });
+
+
+            const result = await response.json();
+
+
+            if (!response.ok || result.success === false) {
+
+                throw new Error("Échec de l'envoi du formulaire.");
+
+            }
+
+
+            /* Enregistrer le nom pour la page merci */
+
+            sessionStorage.setItem("odiwebClientName", name);
+
+
+            /* Redirection après confirmation de l'envoi */
+
+            window.location.href = "merci.html";
+
+
+        } catch (error) {
+
+            console.error("Erreur FormSubmit :", error);
+
+            if (contactStatus) {
+
+                contactStatus.textContent =
+                    "Une erreur est survenue. Veuillez réessayer.";
+
+            }
+
+            if (submitButton) {
+
+                submitButton.disabled = false;
+
+                submitButton.textContent = originalButtonText;
+
+            }
+
+        }
+
+    });
+
+}
+
+/* ==========================================
+   ODIWEB PORTFOLIO
+   MAIN.JS
+   PARTIE 3/3
+   FAQ ET INTERACTIONS FINALES
+========================================== */
+
+
+/* ==========================================
+   1. GESTION DE LA FAQ
+========================================== */
+
+const faqItems = document.querySelectorAll(".faq-item");
+
+faqItems.forEach(function (item) {
+
+    const question = item.querySelector(".faq-question");
+
+    const answer = item.querySelector(".faq-answer");
+
+    if (question && answer) {
+
+        question.addEventListener("click", function () {
+
+            const isActive = item.classList.contains("active");
+
+
+            /* Fermer toutes les réponses */
+
+            faqItems.forEach(function (faqItem) {
+
+                faqItem.classList.remove("active");
+
+                const faqAnswer = faqItem.querySelector(".faq-answer");
+
+                if (faqAnswer) {
+                    faqAnswer.style.maxHeight = null;
+                }
+
+            });
+
+
+            /* Ouvrir la réponse sélectionnée */
+
+            if (!isActive) {
+
+                item.classList.add("active");
+
+                answer.style.maxHeight = answer.scrollHeight + "px";
+
+            }
+
+        });
+
+    }
+
+});
+
+
+/* ==========================================
+   2. ANIMATION AU DÉFILEMENT
+========================================== */
+
+const revealElements = document.querySelectorAll(
+    ".skill-card, .service-card, .project-card, .process-card, .advantages-card"
+);
+
+if ("IntersectionObserver" in window) {
+
+    const revealObserver = new IntersectionObserver(function (entries, observer) {
+
+        entries.forEach(function (entry) {
+
+            if (entry.isIntersecting) {
+
+                entry.target.classList.add("visible");
+
+                observer.unobserve(entry.target);
+
+            }
+
+        });
+
+    }, {
+        threshold: 0.12
+    });
+
+
+    revealElements.forEach(function (element) {
+
+        revealObserver.observe(element);
+
+    });
+
+} else {
+
+    revealElements.forEach(function (element) {
+
+        element.classList.add("visible");
+
+    });
+
+}
+
+
+/* ==========================================
+   3. BOUTON RETOUR EN HAUT
+========================================== */
+
+const backToTop = document.querySelector(".back-to-top");
+
+if (backToTop) {
+
+    window.addEventListener("scroll", function () {
+
+        if (window.scrollY > 500) {
+
+            backToTop.classList.add("show");
+
+        } else {
+
+            backToTop.classList.remove("show");
 
         }
 
     });
 
 
-    /* =====================================
-       5. ANNÉE AUTOMATIQUE DU FOOTER
-       ===================================== */
+    backToTop.addEventListener("click", function (event) {
 
-    const currentYear = document.getElementById("currentYear");
+        event.preventDefault();
 
-    if (currentYear) {
-        currentYear.textContent = new Date().getFullYear();
-    }
-
-
-    /* =====================================
-       6. ANIMATION DES ÉLÉMENTS AU SCROLL
-       ===================================== */
-
-    const animatedElements = document.querySelectorAll(
-        ".reveal, .fade-in, .slide-up"
-    );
-
-    if ("IntersectionObserver" in window) {
-
-        const observer = new IntersectionObserver(function (entries) {
-
-            entries.forEach(function (entry) {
-
-                if (entry.isIntersecting) {
-
-                    entry.target.classList.add("visible");
-
-                    observer.unobserve(entry.target);
-
-                }
-
-            });
-
-        }, {
-            threshold: 0.15
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
         });
 
-        animatedElements.forEach(function (element) {
-            observer.observe(element);
-        });
+    });
 
-    } else {
+}
 
-        animatedElements.forEach(function (element) {
-            element.classList.add("visible");
-        });
 
-    }
+/* ==========================================
+   4. LIEN WHATSAPP
+========================================== */
 
-});
+const whatsappButton = document.querySelector(".whatsapp-float");
+
+if (whatsappButton) {
+
+    whatsappButton.setAttribute("target", "_blank");
+
+    whatsappButton.setAttribute("rel", "noopener noreferrer");
+
+}
+
+
+/* ==========================================
+   5. FIN DU MAIN.JS
+========================================== */
+
+console.log("ODIWEB PORTFOLIO : JavaScript chargé avec succès.");
+
