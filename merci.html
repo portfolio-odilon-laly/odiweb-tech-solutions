@@ -8,13 +8,14 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="Merci d'avoir contacté ODIWEB PORTFOLIO. Votre message a bien été transmis.">
+    <meta name="description" content="Merci d'avoir contacté ODIWEB. Votre message a été envoyé avec succès.">
+
+    <meta name="author" content="Odilon Laly">
 
     <meta name="theme-color" content="#071B35">
 
     <title>Merci pour votre message | ODIWEB</title>
 
-    <link rel="icon" href="logo-odiweb.png">
 
     <!-- Google Fonts -->
 
@@ -22,906 +23,507 @@
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
 
     <!-- Font Awesome -->
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="responsive.css">
+
+
+    <!-- Style spécifique à la page Merci -->
 
     <style>
 
-/* ==========================================
-   ODIWEB PORTFOLIO
-   PAGE MERCI
-   DESIGN RESPONSIVE COMPLET
-========================================== */
+        /* =====================================
+           PAGE MERCI
+        ===================================== */
 
+        .thankyou-page {
 
-/* ==========================================
-   1. VARIABLES
-========================================== */
+            min-height: 100vh;
 
-:root {
+            display: flex;
 
-    --primary-color: #071B35;
+            flex-direction: column;
 
-    --secondary-color: #087DE0;
+            background: #F5F7FA;
 
-    --accent-color: #00C2FF;
+        }
 
-    --gold-color: #D4A017;
 
-    --gold-light: #F2C94C;
+        /* HEADER */
 
-    --white: #FFFFFF;
+        .thankyou-header {
 
-    --light-bg: #F5F7FA;
+            width: 100%;
 
-    --gray: #64748B;
+            padding: 22px 7%;
 
-    --dark-text: #172B45;
+            background: #FFFFFF;
 
-    --border-color: #E2E8F0;
+            box-shadow: 0 3px 20px rgba(7, 27, 53, 0.05);
 
-    --font-heading: 'Outfit', sans-serif;
+        }
 
-    --font-body: 'DM Sans', sans-serif;
 
-    --transition: all 0.3s ease;
+        .thankyou-navbar {
 
-}
+            max-width: 1200px;
 
+            margin: auto;
 
-/* ==========================================
-   2. RESET GÉNÉRAL
-========================================== */
+            display: flex;
 
-* {
+            justify-content: space-between;
 
-    margin: 0;
+            align-items: center;
 
-    padding: 0;
+        }
 
-    box-sizing: border-box;
 
-}
+        .thankyou-logo {
 
+            display: flex;
 
-html {
+            align-items: center;
 
-    scroll-behavior: smooth;
+            gap: 12px;
 
-}
+            text-decoration: none;
 
+            color: #071B35;
 
-body {
+            font-family: 'Outfit', sans-serif;
 
-    font-family: var(--font-body);
+            font-size: 25px;
 
-    background: var(--light-bg);
+            font-weight: 800;
 
-    color: var(--dark-text);
+        }
 
-    min-height: 100vh;
 
-    display: flex;
+        .thankyou-logo img {
 
-    flex-direction: column;
+            width: 45px;
 
-    overflow-x: hidden;
+            height: 45px;
 
-}
+            object-fit: contain;
 
+        }
 
-a {
 
-    text-decoration: none;
+        .thankyou-home-link {
 
-    color: inherit;
+            color: #087DE0;
 
-}
+            font-weight: 600;
 
+            text-decoration: none;
 
-button {
+            transition: 0.3s;
 
-    font-family: inherit;
+        }
 
-}
 
+        .thankyou-home-link:hover {
 
-/* ==========================================
-   3. HEADER
-========================================== */
+            color: #D4A017;
 
-.header {
+        }
 
-    width: 100%;
 
-    background: var(--white);
+        /* CONTENU PRINCIPAL */
 
-    padding: 18px 6%;
+        .thankyou-main {
 
-    box-shadow: 0 3px 20px rgba(7, 27, 53, 0.06);
+            flex: 1;
 
-    position: relative;
+            display: flex;
 
-    z-index: 10;
+            align-items: center;
 
-}
+            justify-content: center;
 
+            padding: 70px 20px;
 
-.header-container {
+        }
 
-    max-width: 1200px;
 
-    margin: auto;
+        .thankyou-card {
 
-    display: flex;
+            width: 100%;
 
-    justify-content: space-between;
+            max-width: 750px;
 
-    align-items: center;
+            padding: 65px 55px;
 
-    gap: 20px;
+            background: #FFFFFF;
 
-}
+            border-radius: 24px;
 
+            text-align: center;
 
-.logo {
+            box-shadow: 0 15px 60px rgba(7, 27, 53, 0.08);
 
-    display: flex;
+            animation: thankyouAppear 0.8s ease;
 
-    align-items: center;
+        }
 
-    gap: 12px;
 
-}
+        @keyframes thankyouAppear {
 
+            from {
 
-.logo img {
+                opacity: 0;
 
-    width: 48px;
+                transform: translateY(30px);
 
-    height: 48px;
+            }
 
-    object-fit: contain;
+            to {
 
-}
+                opacity: 1;
 
+                transform: translateY(0);
 
-.logo-text {
+            }
 
-    font-family: var(--font-heading);
+        }
 
-    font-size: 21px;
 
-    font-weight: 800;
+        /* ICÔNE DE CONFIRMATION */
 
-    color: var(--primary-color);
+        .thankyou-icon {
 
-}
+            width: 110px;
 
+            height: 110px;
 
-.logo-text span {
+            margin: 0 auto 30px;
 
-    color: var(--secondary-color);
+            display: flex;
 
-}
+            align-items: center;
 
+            justify-content: center;
 
-.header-label {
+            border-radius: 50%;
 
-    color: var(--gray);
+            background: rgba(0, 194, 255, 0.10);
 
-    font-size: 13px;
+            color: #087DE0;
 
-    font-weight: 600;
+            font-size: 48px;
 
-}
+            position: relative;
 
+        }
 
-/* ==========================================
-   4. SECTION PRINCIPALE
-========================================== */
 
-.thankyou-section {
+        .thankyou-icon::before {
 
-    flex: 1;
+            content: '';
 
-    display: flex;
+            position: absolute;
 
-    align-items: center;
+            inset: -10px;
 
-    justify-content: center;
+            border: 2px solid rgba(0, 194, 255, 0.20);
 
-    padding: 75px 20px;
+            border-radius: 50%;
 
-    position: relative;
+        }
 
-    overflow: hidden;
 
-}
+        /* TEXTES */
 
+        .thankyou-label {
 
-/* Décorations */
+            display: inline-block;
 
-.thankyou-section::before {
+            margin-bottom: 18px;
 
-    content: "";
+            color: #D4A017;
 
-    position: absolute;
+            font-size: 13px;
 
-    width: 400px;
+            font-weight: 800;
 
-    height: 400px;
+            letter-spacing: 2px;
 
-    background: rgba(0, 194, 255, 0.08);
+            text-transform: uppercase;
 
-    border-radius: 50%;
+        }
 
-    top: -180px;
 
-    left: -150px;
+        .thankyou-title {
 
-}
+            margin-bottom: 20px;
 
+            color: #071B35;
 
-.thankyou-section::after {
+            font-family: 'Outfit', sans-serif;
 
-    content: "";
+            font-size: clamp(30px, 5vw, 46px);
 
-    position: absolute;
+            font-weight: 800;
 
-    width: 350px;
+            line-height: 1.2;
 
-    height: 350px;
+        }
 
-    background: rgba(212, 160, 23, 0.08);
 
-    border-radius: 50%;
+        .thankyou-title span {
 
-    bottom: -160px;
+            color: #087DE0;
 
-    right: -120px;
+        }
 
-}
 
+        .thankyou-description {
 
-/* ==========================================
-   5. CARTE DE REMERCIEMENT
-========================================== */
+            max-width: 560px;
 
-.thankyou-card {
+            margin: 0 auto 18px;
 
-    width: 100%;
+            color: #64748B;
 
-    max-width: 760px;
+            font-size: 16px;
 
-    background: var(--white);
+            line-height: 1.8;
 
-    padding: 65px 55px;
+        }
 
-    border-radius: 24px;
 
-    text-align: center;
+        .thankyou-note {
 
-    position: relative;
+            margin: 25px 0 35px;
 
-    z-index: 2;
+            padding: 18px 22px;
 
-    box-shadow: 0 20px 70px rgba(7, 27, 53, 0.09);
+            background: #F5F7FA;
 
-    border: 1px solid rgba(226, 232, 240, 0.8);
+            border-left: 4px solid #D4A017;
 
-    animation: fadeIn 0.8s ease;
+            border-radius: 8px;
 
-}
+            color: #071B35;
 
+            font-size: 14px;
 
-/* ==========================================
-   6. ICÔNE DE CONFIRMATION
-========================================== */
+            line-height: 1.7;
 
-.success-icon {
+            text-align: left;
 
-    width: 105px;
+        }
 
-    height: 105px;
 
-    margin: 0 auto 30px;
+        .thankyou-note i {
 
-    border-radius: 50%;
+            margin-right: 8px;
 
-    display: flex;
+            color: #D4A017;
 
-    align-items: center;
+        }
 
-    justify-content: center;
 
-    background: rgba(0, 194, 255, 0.10);
+        /* BOUTONS */
 
-    border: 2px solid rgba(0, 194, 255, 0.25);
+        .thankyou-buttons {
 
-    position: relative;
+            display: flex;
 
-}
+            justify-content: center;
 
+            flex-wrap: wrap;
 
-.success-icon i {
+            gap: 15px;
 
-    font-size: 43px;
+        }
 
-    color: var(--secondary-color);
 
-}
+        .thankyou-btn {
 
+            min-height: 52px;
 
-.success-icon::after {
+            padding: 15px 25px;
 
-    content: "";
+            display: inline-flex;
 
-    position: absolute;
+            align-items: center;
 
-    width: 125px;
+            justify-content: center;
 
-    height: 125px;
+            gap: 10px;
 
-    border: 1px dashed rgba(8, 125, 224, 0.35);
+            border-radius: 8px;
 
-    border-radius: 50%;
+            text-decoration: none;
 
-    animation: rotate 15s linear infinite;
+            font-weight: 700;
 
-}
+            transition: 0.3s ease;
 
+        }
 
-/* ==========================================
-   7. TEXTES
-========================================== */
 
-.success-label {
+        .thankyou-btn-primary {
 
-    display: inline-block;
+            background: #087DE0;
 
-    padding: 9px 18px;
+            color: #FFFFFF;
 
-    background: rgba(212, 160, 23, 0.12);
+        }
 
-    color: #9A710B;
 
-    border-radius: 30px;
+        .thankyou-btn-primary:hover {
 
-    font-size: 12px;
+            background: #071B35;
 
-    font-weight: 700;
+            transform: translateY(-3px);
 
-    text-transform: uppercase;
+        }
 
-    letter-spacing: 1.5px;
 
-    margin-bottom: 22px;
+        .thankyou-btn-secondary {
 
-}
+            background: #FFFFFF;
 
+            border: 1px solid #D4A017;
 
-.thankyou-title {
+            color: #071B35;
 
-    font-family: var(--font-heading);
+        }
 
-    font-size: 46px;
 
-    line-height: 1.2;
+        .thankyou-btn-secondary:hover {
 
-    font-weight: 800;
+            background: #D4A017;
 
-    color: var(--primary-color);
+            color: #FFFFFF;
 
-    margin-bottom: 20px;
+            transform: translateY(-3px);
 
-}
+        }
 
 
-.thankyou-title span {
+        /* PIED DE PAGE */
 
-    color: var(--secondary-color);
+        .thankyou-footer {
 
-}
+            padding: 25px 20px;
 
+            background: #071B35;
 
-.client-name {
+            text-align: center;
 
-    color: var(--gold-color);
+            color: rgba(255, 255, 255, 0.75);
 
-}
+            font-size: 13px;
 
+        }
 
-.thankyou-description {
 
-    max-width: 550px;
+        .thankyou-footer span {
 
-    margin: 0 auto 30px;
+            color: #F2C94C;
 
-    font-size: 16px;
+            font-weight: 700;
 
-    line-height: 1.9;
+        }
 
-    color: var(--gray);
 
-}
+        /* RESPONSIVE */
 
+        @media (max-width: 600px) {
 
-/* ==========================================
-   8. INFORMATIONS DE CONFIRMATION
-========================================== */
+            .thankyou-header {
 
-.confirmation-box {
+                padding: 18px 5%;
 
-    max-width: 520px;
+            }
 
-    margin: 0 auto 35px;
 
-    padding: 22px;
+            .thankyou-logo {
 
-    background: #F0F9FF;
+                font-size: 20px;
 
-    border-left: 4px solid var(--secondary-color);
+            }
 
-    border-radius: 10px;
 
-    display: flex;
+            .thankyou-logo img {
 
-    align-items: flex-start;
+                width: 38px;
 
-    gap: 15px;
+                height: 38px;
 
-    text-align: left;
+            }
 
-}
 
+            .thankyou-home-link {
 
-.confirmation-box i {
+                font-size: 13px;
 
-    font-size: 22px;
+            }
 
-    color: var(--secondary-color);
 
-    margin-top: 3px;
+            .thankyou-main {
 
-}
+                padding: 45px 15px;
 
+            }
 
-.confirmation-box p {
 
-    color: var(--dark-text);
+            .thankyou-card {
 
-    font-size: 14px;
+                padding: 45px 22px;
 
-    line-height: 1.7;
+                border-radius: 18px;
 
-}
+            }
 
 
-/* ==========================================
-   9. BOUTONS
-========================================== */
+            .thankyou-icon {
 
-.thankyou-buttons {
+                width: 85px;
 
-    display: flex;
+                height: 85px;
 
-    justify-content: center;
+                font-size: 38px;
 
-    align-items: center;
+            }
 
-    gap: 15px;
 
-    flex-wrap: wrap;
+            .thankyou-description {
 
-}
+                font-size: 14px;
 
+            }
 
-.btn {
 
-    min-height: 52px;
+            .thankyou-buttons {
 
-    padding: 14px 25px;
+                flex-direction: column;
 
-    border-radius: 8px;
+            }
 
-    display: inline-flex;
 
-    justify-content: center;
+            .thankyou-btn {
 
-    align-items: center;
+                width: 100%;
 
-    gap: 10px;
+            }
 
-    font-size: 14px;
-
-    font-weight: 700;
-
-    transition: var(--transition);
-
-}
-
-
-.btn-primary {
-
-    background: var(--secondary-color);
-
-    color: var(--white);
-
-    box-shadow: 0 8px 20px rgba(8, 125, 224, 0.20);
-
-}
-
-
-.btn-primary:hover {
-
-    background: var(--primary-color);
-
-    transform: translateY(-3px);
-
-}
-
-
-.btn-outline {
-
-    border: 1px solid var(--border-color);
-
-    color: var(--primary-color);
-
-    background: var(--white);
-
-}
-
-
-.btn-outline:hover {
-
-    border-color: var(--gold-color);
-
-    color: var(--gold-color);
-
-    transform: translateY(-3px);
-
-}
-
-
-/* ==========================================
-   10. SIGNATURE
-========================================== */
-
-.thankyou-signature {
-
-    margin-top: 40px;
-
-    padding-top: 25px;
-
-    border-top: 1px solid var(--border-color);
-
-}
-
-
-.thankyou-signature p {
-
-    color: var(--gray);
-
-    font-size: 13px;
-
-    margin-bottom: 8px;
-
-}
-
-
-.thankyou-signature strong {
-
-    font-family: var(--font-heading);
-
-    color: var(--primary-color);
-
-    font-size: 16px;
-
-    letter-spacing: 1px;
-
-}
-
-
-.thankyou-signature strong span {
-
-    color: var(--gold-color);
-
-}
-
-
-/* ==========================================
-   11. FOOTER
-========================================== */
-
-.footer {
-
-    background: var(--primary-color);
-
-    padding: 25px 20px;
-
-    text-align: center;
-
-}
-
-
-.footer p {
-
-    color: rgba(255, 255, 255, 0.7);
-
-    font-size: 13px;
-
-    line-height: 1.7;
-
-}
-
-
-.footer span {
-
-    color: var(--gold-light);
-
-    font-weight: 700;
-
-}
-
-
-/* ==========================================
-   12. ANIMATIONS
-========================================== */
-
-@keyframes fadeIn {
-
-    from {
-
-        opacity: 0;
-
-        transform: translateY(25px);
-
-    }
-
-    to {
-
-        opacity: 1;
-
-        transform: translateY(0);
-
-    }
-
-}
-
-
-@keyframes rotate {
-
-    from {
-
-        transform: rotate(0deg);
-
-    }
-
-    to {
-
-        transform: rotate(360deg);
-
-    }
-
-}
-
-
-/* ==========================================
-   13. TABLETTES
-========================================== */
-
-@media screen and (max-width: 768px) {
-
-    .header {
-
-        padding: 16px 5%;
-
-    }
-
-    .thankyou-section {
-
-        padding: 55px 20px;
-
-    }
-
-    .thankyou-card {
-
-        padding: 55px 35px;
-
-    }
-
-    .thankyou-title {
-
-        font-size: 38px;
-
-    }
-
-}
-
-
-/* ==========================================
-   14. TÉLÉPHONES
-========================================== */
-
-@media screen and (max-width: 576px) {
-
-    .header-container {
-
-        flex-direction: column;
-
-        gap: 8px;
-
-    }
-
-    .logo img {
-
-        width: 42px;
-
-        height: 42px;
-
-    }
-
-    .logo-text {
-
-        font-size: 18px;
-
-    }
-
-    .header-label {
-
-        font-size: 11px;
-
-    }
-
-    .thankyou-section {
-
-        padding: 40px 15px;
-
-    }
-
-    .thankyou-card {
-
-        padding: 45px 22px;
-
-        border-radius: 18px;
-
-    }
-
-    .success-icon {
-
-        width: 85px;
-
-        height: 85px;
-
-        margin-bottom: 25px;
-
-    }
-
-    .success-icon i {
-
-        font-size: 35px;
-
-    }
-
-    .success-icon::after {
-
-        width: 103px;
-
-        height: 103px;
-
-    }
-
-    .thankyou-title {
-
-        font-size: 32px;
-
-    }
-
-    .thankyou-description {
-
-        font-size: 14px;
-
-    }
-
-    .confirmation-box {
-
-        padding: 17px;
-
-    }
-
-    .confirmation-box p {
-
-        font-size: 13px;
-
-    }
-
-    .thankyou-buttons {
-
-        flex-direction: column;
-
-        width: 100%;
-
-    }
-
-    .btn {
-
-        width: 100%;
-
-    }
-
-    .thankyou-signature {
-
-        margin-top: 30px;
-
-    }
-
-}
-
-
-/* ==========================================
-   15. PETITS TÉLÉPHONES
-========================================== */
-
-@media screen and (max-width: 360px) {
-
-    .thankyou-card {
-
-        padding: 38px 17px;
-
-    }
-
-    .thankyou-title {
-
-        font-size: 27px;
-
-    }
-
-    .success-label {
-
-        font-size: 10px;
-
-    }
-
-    .thankyou-description {
-
-        font-size: 13px;
-
-    }
-
-    .logo-text {
-
-        font-size: 16px;
-
-    }
-
-}
-
-
-/* ==========================================
-   16. ACCESSIBILITÉ
-========================================== */
-
-@media (prefers-reduced-motion: reduce) {
-
-    *,
-    *::before,
-    *::after {
-
-        animation-duration: 0.01ms !important;
-
-        animation-iteration-count: 1 !important;
-
-        scroll-behavior: auto !important;
-
-        transition-duration: 0.01ms !important;
-
-    }
-
-}
+        }
 
     </style>
 
@@ -930,198 +532,159 @@ button {
 
 <body>
 
+    <div class="thankyou-page">
 
-    <!-- ======================================
-         HEADER
-    ======================================= -->
 
-    <header class="header">
+        <!-- HEADER -->
 
-        <div class="header-container">
+        <header class="thankyou-header">
 
-            <a href="index.html" class="logo">
+            <nav class="thankyou-navbar">
 
-                <img src="logo-odiweb.png" alt="Logo ODIWEB">
+                <a href="index.html" class="thankyou-logo">
 
-                <div class="logo-text">
-                    ODIWEB <span>TECH SOLUTIONS</span>
+                    <img src="logo-odiweb.png" alt="Logo ODIWEB">
+
+                    <span>ODIWEB</span>
+
+                </a>
+
+
+                <a href="index.html" class="thankyou-home-link">
+
+                    <i class="fas fa-arrow-left"></i>
+
+                    Retour au portfolio
+
+                </a>
+
+            </nav>
+
+        </header>
+
+
+
+        <!-- CONTENU -->
+
+        <main class="thankyou-main">
+
+            <div class="thankyou-card">
+
+
+                <!-- Icône -->
+
+                <div class="thankyou-icon">
+
+                    <i class="fas fa-check"></i>
+
                 </div>
 
-            </a>
 
-            <p class="header-label">
-                Merci pour votre confiance
-            </p>
+                <!-- Message -->
 
-        </div>
+                <span class="thankyou-label">
 
-    </header>
+                    MESSAGE ENVOYÉ
 
+                </span>
 
 
-    <!-- ======================================
-         SECTION DE REMERCIEMENT
-    ======================================= -->
+                <h1 class="thankyou-title">
 
-    <main class="thankyou-section">
+                    Merci pour votre <span>confiance !</span>
 
-        <div class="thankyou-card">
+                </h1>
 
 
-            <!-- Icône -->
+                <p class="thankyou-description">
 
-            <div class="success-icon">
+                    Votre message a été transmis avec succès.
 
-                <i class="fas fa-check"></i>
+                    Je vous remercie d'avoir pris le temps de me contacter.
 
-            </div>
+                    Je prendrai connaissance de votre demande et vous répondrai
 
-
-            <!-- Petit label -->
-
-            <div class="success-label">
-
-                <i class="fas fa-circle-check"></i>
-
-                Message envoyé
-
-            </div>
-
-
-            <!-- Titre -->
-
-            <h1 class="thankyou-title">
-
-                Merci <span id="clientName" class="client-name">pour votre message</span> !
-
-            </h1>
-
-
-            <!-- Description -->
-
-            <p class="thankyou-description">
-
-                Votre message a bien été transmis à ODIWEB TECH SOLUTIONS.
-
-                Je vous remercie pour l'intérêt que vous portez à mes services.
-
-                Je prendrai le temps d'étudier votre demande et de vous répondre dans les meilleurs délais.
-
-            </p>
-
-
-            <!-- Confirmation -->
-
-            <div class="confirmation-box">
-
-                <i class="fas fa-envelope-circle-check"></i>
-
-                <p>
-
-                    <strong>Votre demande a été prise en compte.</strong>
-
-                    Merci de patienter pendant que j'examine votre message.
+                    dès que possible.
 
                 </p>
 
+
+                <!-- Information -->
+
+                <div class="thankyou-note">
+
+                    <i class="fas fa-info-circle"></i>
+
+                    <strong>Et maintenant ?</strong>
+
+                    <br>
+
+                    Je vais examiner votre demande afin de mieux comprendre
+
+                    votre besoin et de vous apporter une réponse adaptée.
+
+                </div>
+
+
+                <!-- Boutons -->
+
+                <div class="thankyou-buttons">
+
+
+                    <a href="index.html" class="thankyou-btn thankyou-btn-primary">
+
+                        <i class="fas fa-home"></i>
+
+                        Retour au portfolio
+
+                    </a>
+
+
+                    <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" class="thankyou-btn thankyou-btn-secondary">
+
+                        <i class="fab fa-whatsapp"></i>
+
+                        Me contacter sur WhatsApp
+
+                    </a>
+
+
+                </div>
+
+
             </div>
 
-
-            <!-- Boutons -->
-
-            <div class="thankyou-buttons">
-
-                <a href="index.html#accueil" class="btn btn-primary">
-
-                    <i class="fas fa-house"></i>
-
-                    Retour à l'accueil
-
-                </a>
-
-
-                <a href="mailto:odilonlaly086@gmail.com" class="btn btn-outline">
-
-                    <i class="fas fa-envelope"></i>
-
-                    Me contacter
-
-                </a>
-
-            </div>
-
-
-            <!-- Signature -->
-
-            <div class="thankyou-signature">
-
-                <p>Créativité, innovation et solutions digitales.</p>
-
-                <strong>
-
-                    ODIWEB <span>TECH SOLUTIONS</span>
-
-                </strong>
-
-            </div>
-
-
-        </div>
-
-    </main>
+        </main>
 
 
 
-    <!-- ======================================
-         FOOTER
-    ======================================= -->
+        <!-- FOOTER -->
 
-    <footer class="footer">
+        <footer class="thankyou-footer">
 
-        <p>
+            <p>
 
-            © <span id="currentYear"></span>
+                © <span id="thankyouYear"></span>
 
-            <span>ODIWEB TECH SOLUTIONS</span>.
+                <span>ODIWEB</span>.
 
-            Tous droits réservés.
+                Tous droits réservés.
 
-        </p>
+            </p>
 
-    </footer>
+        </footer>
 
 
+    </div>
 
-    <!-- ======================================
-         JAVASCRIPT
-    ======================================= -->
+
+    <!-- ANNÉE AUTOMATIQUE -->
 
     <script>
 
-        /* Récupérer le nom du client */
-
-        const savedClientName = sessionStorage.getItem("odiwebClientName");
-
-        const clientNameElement = document.getElementById("clientName");
-
-
-        if (savedClientName && clientNameElement) {
-
-            clientNameElement.textContent = savedClientName;
-
-            sessionStorage.removeItem("odiwebClientName");
-
-        }
-
-
-        /* Année automatique */
-
-        document.getElementById("currentYear").textContent =
-            new Date().getFullYear();
-
+        document.getElementById('thankyouYear').textContent = new Date().getFullYear();
 
     </script>
-
 
 </body>
 
