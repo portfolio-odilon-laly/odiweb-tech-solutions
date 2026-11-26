@@ -413,3 +413,31 @@ if (whatsappButton) {
 
 console.log("ODIWEB PORTFOLIO : JavaScript chargé avec succès.");
 
+
+
+/* =====================================
+   ENREGISTREMENT DES INFORMATIONS CLIENT
+===================================== */
+
+const contactForm = document.getElementById("contactForm");
+
+if (contactForm) {
+
+    contactForm.addEventListener("submit", function () {
+
+        const clientData = {
+            name: document.getElementById("contactName").value.trim(),
+            email: document.getElementById("contactEmail").value.trim(),
+            subject: document.getElementById("contactSubject").value.trim(),
+            message: document.getElementById("contactMessage").value.trim()
+        };
+
+        localStorage.setItem(
+            "odiweb-client-message",
+            JSON.stringify(clientData)
+        );
+
+    });
+
+}
+
