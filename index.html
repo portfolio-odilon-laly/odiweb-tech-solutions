@@ -7,30 +7,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="Odilon Laly, créateur digital polyvalent et développeur web. Découvrez mes services, compétences et réalisations.">
+    <meta
+        name="description"
+        content="Odilon Laly, créateur digital polyvalent et développeur web. Découvrez mes services et réalisations."
+        data-i18n-content="meta_description">
 
     <meta name="author" content="Odilon Laly">
-
     <meta name="theme-color" content="#071B35">
 
-    <title>Odilon Laly | ODIWEB TECH SOLUTIONS</title>
+    <title data-i18n="page_title">
+        Odilon Laly | ODIWEB TECH SOLUTIONS
+    </title>
+
 
     <!-- GOOGLE FONTS -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
+
     <!-- FONT AWESOME -->
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
+
     <!-- CSS -->
+
     <link rel="stylesheet" href="style.css">
+
     <link rel="stylesheet" href="responsive.css">
 
 </head>
 
+
 <body>
+
 
     <!-- =================================
          HEADER / NAVIGATION
@@ -40,10 +54,15 @@
 
         <div class="container navbar">
 
+
             <!-- LOGO -->
+
             <a href="#accueil" class="logo">
 
-                <img src="logo-odiweb.png" alt="Logo ODIWEB">
+                <img
+                    src="logo-odiweb.png"
+                    alt="Logo ODIWEB"
+                    data-i18n-alt="logo_alt">
 
                 <span>
                     ODIWEB<span class="logo-highlight">.</span>
@@ -51,39 +70,88 @@
 
             </a>
 
+
+
             <!-- NAVIGATION -->
+
             <nav class="nav-menu" id="navMenu">
 
-                <a href="#accueil" class="nav-link active" data-i18n="nav_home">
+                <a
+                    href="#accueil"
+                    class="nav-link active"
+                    data-i18n="nav_home">
+
                     Accueil
+
                 </a>
 
-                <a href="#apropos" class="nav-link" data-i18n="nav_about">
+
+                <a
+                    href="#apropos"
+                    class="nav-link"
+                    data-i18n="nav_about">
+
                     À propos
+
                 </a>
 
-                <a href="#competences" class="nav-link" data-i18n="nav_skills">
+
+                <a
+                    href="#competences"
+                    class="nav-link"
+                    data-i18n="nav_skills">
+
                     Compétences
+
                 </a>
 
-                <a href="#services" class="nav-link" data-i18n="nav_services">
+
+                <a
+                    href="#services"
+                    class="nav-link"
+                    data-i18n="nav_services">
+
                     Services
+
                 </a>
 
-                <a href="#projets" class="nav-link" data-i18n="nav_projects">
+
+                <a
+                    href="#projets"
+                    class="nav-link"
+                    data-i18n="nav_projects">
+
                     Projets
+
                 </a>
 
-                <a href="#contact" class="nav-link" data-i18n="nav_contact">
+
+                <a
+                    href="#contact"
+                    class="nav-link"
+                    data-i18n="nav_contact">
+
                     Contact
+
                 </a>
 
             </nav>
 
-            <!-- ACTIONS -->
+
+
+            <!-- ACTIONS DE NAVIGATION -->
+
             <div class="nav-actions">
 
-                <button class="language-btn" id="languageBtn" type="button">
+
+                <!-- BOUTON DE LANGUE -->
+
+                <button
+                    class="language-btn"
+                    id="languageBtn"
+                    type="button"
+                    aria-label="Changer la langue"
+                    data-i18n-aria-label="language_aria">
 
                     <i class="fa-solid fa-globe"></i>
 
@@ -91,15 +159,29 @@
 
                 </button>
 
-                <a href="#contact" class="btn btn-primary nav-cta" data-i18n="nav_cta">
+
+
+                <!-- BOUTON CONTACT -->
+
+                <a
+                    href="#contact"
+                    class="btn btn-primary nav-cta"
+                    data-i18n="nav_cta">
+
                     Discutons
+
                 </a>
+
+
+
+                <!-- MENU MOBILE -->
 
                 <button
                     class="menu-toggle"
                     id="menuToggle"
                     type="button"
                     aria-label="Ouvrir le menu"
+                    data-i18n-aria-label="menu_open"
                     aria-controls="navMenu"
                     aria-expanded="false">
 
@@ -114,974 +196,1419 @@
     </header>
 
 
+
     <!-- =================================
-         HERO / SECTION D'ACCUEIL
+         CONTENU PRINCIPAL
     ================================== -->
 
     <main>
 
-        <section class="hero" id="accueil">
 
-            <div class="container hero-container">
-
-                <!-- TEXTE PRINCIPAL -->
-                <div class="hero-content">
-
-                    <span class="hero-greeting" data-i18n="hero_greeting">
-                        Bonjour, je suis
-                    </span>
-
-                    <h1 class="hero-title">
-
-                        Odilon
-
-                        <span>Laly</span>
-
-                    </h1>
-
-                    <h2 class="hero-subtitle" data-i18n="hero_subtitle">
-
-                        Créateur digital polyvalent
-                        & Développeur Web
-
-                    </h2>
-
-                    <p class="hero-description" data-i18n="hero_description">
-
-                        J'accompagne les entrepreneurs, les commerçants
-                        et les entreprises dans leur transformation
-                        numérique grâce à des solutions web modernes
-                        et des créations graphiques professionnelles.
-
-                    </p>
-
-                    <!-- BOUTONS -->
-                    <div class="hero-buttons">
-
-                        <a href="#projets" class="btn btn-primary">
-
-                            <span data-i18n="hero_button_projects">
-                                Découvrir mes projets
-                            </span>
-
-                            <i class="fa-solid fa-arrow-right"></i>
-
-                        </a>
-
-                        <a href="#contact" class="btn btn-outline">
-
-                            <span data-i18n="hero_button_contact">
-                                Me contacter
-                            </span>
-
-                        </a>
-
-                    </div>
-
-                </div>
-
-
-                <!-- PHOTO DE PROFIL -->
-                <div class="hero-visual">
-
-                    <div class="hero-image-wrapper">
-
-                        <img
-                            src="odilon-profile.png"
-                            alt="Portrait professionnel de Odilon Laly"
-                            class="hero-profile-image">
-
-                    </div>
-
-                    <!-- ÉTIQUETTES DE SPÉCIALITÉS -->
-                    <div class="hero-tag hero-tag-web">
-
-                        <i class="fa-solid fa-code"></i>
-
-                        <span>Web Development</span>
-
-                    </div>
-
-                    <div class="hero-tag hero-tag-design">
-
-                        <i class="fa-solid fa-pen-nib"></i>
-
-                        <span>Digital Design</span>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <!-- INDICATEUR DE DÉFILEMENT -->
-            <a href="#apropos" class="scroll-indicator">
-
-                <span data-i18n="hero_scroll">
-                    Défiler pour découvrir
-                </span>
-
-                <i class="fa-solid fa-arrow-down"></i>
-
-            </a>
-
-        </section>
 
     <!-- =================================
-         SECTION À PROPOS
+         HERO / SECTION D'ACCUEIL
     ================================== -->
 
-    <section class="about section" id="apropos">
+    <section class="hero" id="accueil">
 
-        <div class="container">
+        <div class="container hero-container">
 
-            <div class="section-heading">
 
-                <span class="section-label">QUI SUIS-JE ?</span>
+            <!-- TEXTE PRINCIPAL -->
 
-                <h2 data-i18n="aboutTitle">À propos de moi</h2>
+            <div class="hero-content">
 
-                <p class="section-description">
-                    Découvrez mon parcours, ma passion et ma vision
-                    du numérique.
+
+                <span
+                    class="hero-greeting"
+                    data-i18n="hero_greeting">
+
+                    Bonjour, je suis
+
+                </span>
+
+
+
+                <h1 class="hero-title">
+
+                    Odilon
+
+                    <span>Laly</span>
+
+                </h1>
+
+
+
+                <h2
+                    class="hero-subtitle"
+                    data-i18n="hero_subtitle">
+
+                    Créateur digital polyvalent
+                    & Développeur Web
+
+                </h2>
+
+
+
+                <p
+                    class="hero-description"
+                    data-i18n="hero_description">
+
+                    J'accompagne les entrepreneurs, les commerçants
+                    et les entreprises dans leur transformation
+                    numérique grâce à des solutions web modernes
+                    et des créations graphiques professionnelles.
+
                 </p>
+
+
+
+                <!-- BOUTONS -->
+
+                <div class="hero-buttons">
+
+
+                    <a href="#projets" class="btn btn-primary">
+
+                        <span data-i18n="hero_button_projects">
+
+                            Découvrir mes projets
+
+                        </span>
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+
+
+                    <a href="#contact" class="btn btn-outline">
+
+                        <span data-i18n="hero_button_contact">
+
+                            Me contacter
+
+                        </span>
+
+                    </a>
+
+                </div>
 
             </div>
 
-            <div class="about-container">
 
-                <!-- IMAGE -->
-                <div class="about-visual">
 
-                    <div class="about-image-wrapper">
 
-                        <img
-                            src="odilon-profile.png"
-                            alt="Odilon Laly, créateur digital et développeur web"
-                            loading="lazy">
+            <!-- PHOTO DE PROFIL -->
 
-                    </div>
+            <div class="hero-visual">
+
+                <div class="hero-image-wrapper">
+
+                    <img
+                        src="odilon-profile.jpg"
+                        alt="Portrait professionnel de Odilon Laly"
+                        data-i18n-alt="hero_image_alt"
+                        class="hero-profile-image">
+
+                </div>
+
+
+
+                <!-- ÉTIQUETTE DÉVELOPPEMENT WEB -->
+
+                <div class="hero-tag hero-tag-web">
+
+                    <i class="fa-solid fa-code"></i>
+
+                    <span data-i18n="hero_tag_web">
+
+                        Développement Web
+
+                    </span>
+
+                </div>
+
+
+
+                <!-- ÉTIQUETTE DESIGN DIGITAL -->
+
+                <div class="hero-tag hero-tag-design">
+
+                    <i class="fa-solid fa-pen-nib"></i>
+
+                    <span data-i18n="hero_tag_design">
+
+                        Design digital
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+
+        <!-- INDICATEUR DE DÉFILEMENT -->
+
+        <a href="#apropos" class="scroll-indicator">
+
+            <span data-i18n="hero_scroll">
+
+                Défiler pour découvrir
+
+            </span>
+
+            <i class="fa-solid fa-arrow-down"></i>
+
+        </a>
+
+    </section>
+
+<!-- ========================================
+     SECTION 2 : À PROPOS DE MOI
+======================================== -->
+
+<section class="about section" id="apropos">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="section-label" data-i18n="about_label">
+                À PROPOS DE MOI
+            </span>
+
+            <h2 class="section-title" data-i18n="about_title">
+                Découvrez mon univers
+            </h2>
+
+            <p class="section-description" data-i18n="about_description">
+                Je suis un créateur digital passionné par le numérique,
+                le design et les nouvelles technologies.
+            </p>
+
+        </div>
+
+        <div class="about-container">
+
+            <!-- Image et expérience -->
+
+            <div class="about-visual">
+
+                <div class="about-image-wrapper">
+
+                    <img
+                        src="odilon-profile.jpg"
+                        alt="Portrait de Odilon Laly"
+                        data-i18n-alt="about_image_alt"
+                        class="about-image"
+                        loading="lazy"
+                    >
 
                     <div class="about-experience">
 
-                        <strong>100%</strong>
+                        <span class="experience-number">100%</span>
 
-                        <span>Passionné par le digital</span>
-
-                    </div>
-
-                </div>
-
-
-                <!-- DESCRIPTION -->
-                <div class="about-content">
-
-                    <span class="about-subtitle">
-                        Créativité • Technologie • Innovation
-                    </span>
-
-                    <h3>
-                        Je transforme vos idées en
-                        <span>solutions digitales.</span>
-                    </h3>
-
-                    <p>
-                        Je suis Odilon Laly, créateur digital polyvalent
-                        et développeur web passionné par les nouvelles
-                        technologies et l'innovation numérique.
-                    </p>
-
-                    <p>
-                        J'accompagne les entrepreneurs, les commerçants,
-                        les marques et les entreprises dans la réalisation
-                        de leurs projets digitaux, en proposant des
-                        solutions créatives, modernes et adaptées
-                        à leurs besoins.
-                    </p>
-
-                    <p>
-                        Mon objectif est de mettre la technologie
-                        et la créativité au service de votre réussite.
-                    </p>
-
-                    <!-- INFORMATIONS -->
-                    <div class="about-infos">
-
-                        <div class="about-info-item">
-
-                            <i class="fa-solid fa-user"></i>
-
-                            <div>
-                                <strong>Nom</strong>
-                                <span>Odilon Laly</span>
-                            </div>
-
-                        </div>
-
-                        <div class="about-info-item">
-
-                            <i class="fa-solid fa-briefcase"></i>
-
-                            <div>
-                                <strong>Profession</strong>
-                                <span>Créateur digital & Développeur Web</span>
-                            </div>
-
-                        </div>
-
-                        <div class="about-info-item">
-
-                            <i class="fa-solid fa-location-dot"></i>
-
-                            <div>
-                                <strong>Localisation</strong>
-                                <span>Bénin</span>
-                            </div>
-
-                        </div>
-
-                        <div class="about-info-item">
-
-                            <i class="fa-solid fa-envelope"></i>
-
-                            <div>
-                                <strong>Email</strong>
-                                <span>Votre adresse email</span>
-                            </div>
-
-                        </div>
+                        <span class="experience-text" data-i18n="about_experience">
+                            Passion et engagement
+                        </span>
 
                     </div>
-
-                    <a href="#contact" class="btn btn-primary">
-                        Collaborons ensemble
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </a>
 
                 </div>
 
             </div>
 
-        </div>
+            <!-- Présentation -->
 
-    </section>
+            <div class="about-content">
 
-
-    <!-- =================================
-         SECTION COMPÉTENCES
-    ================================== -->
-
-    <section class="skills section" id="competences">
-
-        <div class="container">
-
-            <div class="section-heading">
-
-                <span class="section-label">
-                    MON SAVOIR-FAIRE
+                <span class="about-subtitle" data-i18n="about_subtitle">
+                    Créativité, innovation et technologie
                 </span>
 
-                <h2 class="section-title">
-                    Mes <span>compétences</span>
-                </h2>
+                <h3 class="about-heading" data-i18n="about_heading">
+                    Je transforme les idées en expériences digitales.
+                </h3>
 
-                <p class="section-description">
-                    Des compétences variées pour donner vie à vos
-                    idées et développer votre présence numérique.
+                <p class="about-text" data-i18n="about_text_1">
+                    Je suis Odilon Laly, créateur digital polyvalent et
+                    développeur web. J'accompagne les particuliers,
+                    entrepreneurs et entreprises dans la réalisation
+                    de leurs projets numériques.
                 </p>
 
-            </div>
-
-
-            <div class="skills-grid">
-
-                <!-- COMPÉTENCE 1 -->
-                <div class="skill-card">
-
-                    <div class="skill-icon">
-                        <i class="fa-solid fa-code"></i>
-                    </div>
-
-                    <h3>Développement Web</h3>
-
-                    <p>
-                        Création de sites web modernes, professionnels,
-                        responsives et adaptés à vos activités.
-                    </p>
-
-                    <span class="skill-number">01</span>
-
-                </div>
-
-
-                <!-- COMPÉTENCE 2 -->
-                <div class="skill-card">
-
-                    <div class="skill-icon">
-                        <i class="fa-solid fa-pen-nib"></i>
-                    </div>
-
-                    <h3>Graphisme & Design</h3>
-
-                    <p>
-                        Création de logos, affiches publicitaires,
-                        visuels professionnels et identités graphiques.
-                    </p>
-
-                    <span class="skill-number">02</span>
-
-                </div>
-
-
-                <!-- COMPÉTENCE 3 -->
-                <div class="skill-card">
-
-                    <div class="skill-icon">
-                        <i class="fa-solid fa-video"></i>
-                    </div>
-
-                    <h3>Montage vidéo</h3>
-
-                    <p>
-                        Réalisation et montage de vidéos créatives
-                        pour les réseaux sociaux et la communication.
-                    </p>
-
-                    <span class="skill-number">03</span>
-
-                </div>
-
-
-                <!-- COMPÉTENCE 4 -->
-                <div class="skill-card">
-
-                    <div class="skill-icon">
-                        <i class="fa-solid fa-camera"></i>
-                    </div>
-
-                    <h3>Photographie</h3>
-
-                    <p>
-                        Création et retouche de visuels photographiques
-                        pour valoriser les personnes et les marques.
-                    </p>
-
-                    <span class="skill-number">04</span>
-
-                </div>
-
-
-                <!-- COMPÉTENCE 5 -->
-                <div class="skill-card">
-
-                    <div class="skill-icon">
-                        <i class="fa-solid fa-robot"></i>
-                    </div>
-
-                    <h3>Intelligence artificielle</h3>
-
-                    <p>
-                        Utilisation des outils d'IA pour la création
-                        de contenus, l'automatisation et la productivité.
-                    </p>
-
-                    <span class="skill-number">05</span>
-
-                </div>
-
-
-                <!-- COMPÉTENCE 6 -->
-                <div class="skill-card">
-
-                    <div class="skill-icon">
-                        <i class="fa-solid fa-laptop"></i>
-                    </div>
-
-                    <h3>Informatique bureautique</h3>
-
-                    <p>
-                        Utilisation de Word, Excel, PowerPoint et
-                        des outils numériques professionnels.
-                    </p>
-
-                    <span class="skill-number">06</span>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- =================================
-         SECTION SERVICES
-    ================================== -->
-
-    <section class="services section" id="services">
-
-        <div class="container">
-
-            <div class="section-heading">
-
-                <span class="section-label">CE QUE JE PROPOSE</span>
-
-                <h2 class="section-title">
-                    Mes <span>services</span>
-                </h2>
-
-                <p class="section-description">
-                    Des solutions digitales professionnelles pour
-                    développer votre activité et valoriser votre image.
+                <p class="about-text" data-i18n="about_text_2">
+                    Mon objectif est de concevoir des solutions modernes,
+                    professionnelles et adaptées aux besoins de chaque client,
+                    en associant créativité, technologie et innovation.
                 </p>
 
-            </div>
+                <!-- Informations personnelles -->
 
+                <div class="about-infos">
 
-            <div class="services-grid">
+                    <div class="about-info-item">
 
-                <!-- SERVICE 1 -->
-                <article class="service-card">
+                        <span class="info-label" data-i18n="about_info_name">
+                            Nom
+                        </span>
 
-                    <div class="service-icon">
-                        <i class="fa-solid fa-laptop-code"></i>
-                    </div>
-
-                    <span class="service-number">01</span>
-
-                    <h3>Création de sites web</h3>
-
-                    <p>
-                        Conception de sites vitrines, boutiques en ligne,
-                        portfolios et plateformes web modernes.
-                    </p>
-
-                    <a href="#contact" class="service-link">
-                        Découvrir ce service
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-
-                </article>
-
-
-                <!-- SERVICE 2 -->
-                <article class="service-card">
-
-                    <div class="service-icon">
-                        <i class="fa-solid fa-palette"></i>
-                    </div>
-
-                    <span class="service-number">02</span>
-
-                    <h3>Design graphique</h3>
-
-                    <p>
-                        Création de logos, affiches, flyers, visuels
-                        publicitaires et identités visuelles.
-                    </p>
-
-                    <a href="#contact" class="service-link">
-                        Découvrir ce service
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-
-                </article>
-
-
-                <!-- SERVICE 3 -->
-                <article class="service-card">
-
-                    <div class="service-icon">
-                        <i class="fa-solid fa-film"></i>
-                    </div>
-
-                    <span class="service-number">03</span>
-
-                    <h3>Montage vidéo</h3>
-
-                    <p>
-                        Montage de vidéos promotionnelles, publicitaires
-                        et contenus destinés aux réseaux sociaux.
-                    </p>
-
-                    <a href="#contact" class="service-link">
-                        Découvrir ce service
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-
-                </article>
-
-
-                <!-- SERVICE 4 -->
-                <article class="service-card">
-
-                    <div class="service-icon">
-                        <i class="fa-solid fa-camera-retro"></i>
-                    </div>
-
-                    <span class="service-number">04</span>
-
-                    <h3>Photographie & retouche</h3>
-
-                    <p>
-                        Réalisation et amélioration de photographies
-                        pour une présentation professionnelle.
-                    </p>
-
-                    <a href="#contact" class="service-link">
-                        Découvrir ce service
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-
-                </article>
-
-
-                <!-- SERVICE 5 -->
-                <article class="service-card">
-
-                    <div class="service-icon">
-                        <i class="fa-solid fa-brain"></i>
-                    </div>
-
-                    <span class="service-number">05</span>
-
-                    <h3>IA & automatisation</h3>
-
-                    <p>
-                        Création de contenus avec l'intelligence
-                        artificielle et optimisation des tâches.
-                    </p>
-
-                    <a href="#contact" class="service-link">
-                        Découvrir ce service
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-
-                </article>
-
-
-                <!-- SERVICE 6 -->
-                <article class="service-card">
-
-                    <div class="service-icon">
-                        <i class="fa-solid fa-file-excel"></i>
-                    </div>
-
-                    <span class="service-number">06</span>
-
-                    <h3>Informatique bureautique</h3>
-
-                    <p>
-                        Mise en forme de documents et création
-                        de supports professionnels avec Word,
-                        Excel et PowerPoint.
-                    </p>
-
-                    <a href="#contact" class="service-link">
-                        Découvrir ce service
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-
-                </article>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =================================
-         SECTION PROJETS / PORTFOLIO
-    ================================== -->
-
-    <section class="projects section" id="projets">
-
-        <div class="container">
-
-            <div class="section-heading">
-
-                <span class="section-label">MON TRAVAIL</span>
-
-                <h2 class="section-title">
-                    Mes derniers <span>projets</span>
-                </h2>
-
-                <p class="section-description">
-                    Découvrez quelques exemples de réalisations
-                    et de créations digitales.
-                </p>
-
-            </div>
-
-
-            <!-- FILTRES DES PROJETS -->
-            <div class="project-filters">
-
-                <button
-                    class="filter-btn active"
-                    type="button"
-                    data-filter="all">
-                    Tous les projets
-                </button>
-
-                <button
-                    class="filter-btn"
-                    type="button"
-                    data-filter="web">
-                    Développement Web
-                </button>
-
-                <button
-                    class="filter-btn"
-                    type="button"
-                    data-filter="design">
-                    Design graphique
-                </button>
-
-                <button
-                    class="filter-btn"
-                    type="button"
-                    data-filter="video">
-                    Vidéo
-                </button>
-
-            </div>
-
-
-            <!-- GRILLE DES PROJETS -->
-            <div class="projects-grid" id="projectsGrid">
-
-                <!-- PROJET 1 -->
-                <article class="project-card" data-category="web">
-
-                    <div class="project-image">
-
-                        <img
-                            src="projet-restaurant.jpg"
-                            alt="Projet de site web restaurant"
-                            loading="lazy">
-
-                        <div class="project-overlay">
-
-                            <span>Développement Web</span>
-
-                            <a href="#contact" aria-label="En savoir plus sur le projet restaurant">
-                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                            </a>
-
-                        </div>
+                        <span class="info-value">
+                            Odilon Laly
+                        </span>
 
                     </div>
 
-                    <div class="project-info">
+                    <div class="about-info-item">
 
-                        <span class="project-category">Site Web</span>
+                        <span class="info-label" data-i18n="about_info_profession">
+                            Profession
+                        </span>
 
-                        <h3>Site web de restaurant</h3>
-
-                        <p>
-                            Une présentation digitale moderne pour
-                            valoriser un établissement de restauration.
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-                <!-- PROJET 2 -->
-                <article class="project-card" data-category="web">
-
-                    <div class="project-image">
-
-                        <img
-                            src="projet-boutique.jpg"
-                            alt="Projet de boutique en ligne"
-                            loading="lazy">
-
-                        <div class="project-overlay">
-
-                            <span>Développement Web</span>
-
-                            <a href="#contact" aria-label="En savoir plus sur le projet boutique">
-                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                            </a>
-
-                        </div>
+                        <span class="info-value" data-i18n="about_profession_value">
+                            Créateur digital & développeur web
+                        </span>
 
                     </div>
 
-                    <div class="project-info">
+                    <div class="about-info-item">
 
-                        <span class="project-category">E-commerce</span>
+                        <span class="info-label" data-i18n="about_info_country">
+                            Pays
+                        </span>
 
-                        <h3>Boutique en ligne</h3>
-
-                        <p>
-                            Une expérience d'achat en ligne moderne
-                            pour présenter et vendre des produits.
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-                <!-- PROJET 3 -->
-                <article class="project-card" data-category="design">
-
-                    <div class="project-image">
-
-                        <img
-                            src="projet-graphisme.jpg"
-                            alt="Création graphique professionnelle"
-                            loading="lazy">
-
-                        <div class="project-overlay">
-
-                            <span>Design graphique</span>
-
-                            <a href="#contact" aria-label="En savoir plus sur le projet graphique">
-                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                            </a>
-
-                        </div>
+                        <span class="info-value" data-i18n="about_country_value">
+                            Bénin
+                        </span>
 
                     </div>
 
-                    <div class="project-info">
+                    <div class="about-info-item">
 
-                        <span class="project-category">Graphisme</span>
+                        <span class="info-label" data-i18n="about_info_availability">
+                            Disponibilité
+                        </span>
 
-                        <h3>Création graphique</h3>
-
-                        <p>
-                            Des créations visuelles conçues pour
-                            renforcer l'identité et la communication
-                            d'une marque.
-                        </p>
+                        <span class="info-value availability" data-i18n="about_availability_value">
+                            Disponible pour vos projets
+                        </span>
 
                     </div>
 
-                </article>
+                </div>
 
-            </div>
+                <a href="#contact" class="btn btn-primary">
 
+                    <span data-i18n="about_button">
+                        Travaillons ensemble
+                    </span>
 
-            <div class="projects-more">
+                    <i class="fas fa-arrow-right"></i>
 
-                <a href="#contact" class="btn btn-outline">
-                    Discuter de mon prochain projet
-                    <i class="fa-solid fa-arrow-right"></i>
                 </a>
 
             </div>
 
         </div>
 
-    </section>
+    </div>
 
-    <!-- =================================
-         SECTION MÉTHODE DE TRAVAIL
-    ================================== -->
+</section>
 
-    <section class="process section" id="process">
 
-        <div class="container">
+<!-- ========================================
+     SECTION 3 : MES COMPÉTENCES
+======================================== -->
 
-            <div class="section-heading">
+<section class="skills section" id="competences">
 
-                <span class="section-label">COMMENT JE TRAVAILLE</span>
+    <div class="container">
 
-                <h2 class="section-title">
-                    Ma méthode de <span>travail</span>
-                </h2>
+        <div class="section-heading">
 
-                <p class="section-description">
-                    Une approche structurée pour transformer vos idées
-                    en réalisations concrètes.
+            <span class="section-label" data-i18n="skills_label">
+                MES COMPÉTENCES
+            </span>
+
+            <h2 class="section-title" data-i18n="skills_title">
+                Un ensemble de compétences au service de vos projets
+            </h2>
+
+            <p class="section-description" data-i18n="skills_description">
+                Je mets mes connaissances et ma créativité au service
+                de solutions digitales modernes et efficaces.
+            </p>
+
+        </div>
+
+        <div class="skills-grid">
+
+            <!-- Compétence 1 -->
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+
+                <h3 data-i18n="skill_web_title">
+                    Développement web
+                </h3>
+
+                <p data-i18n="skill_web_description">
+                    Création de sites web modernes, responsives
+                    et professionnels.
                 </p>
+
+                <span class="skill-number">01</span>
 
             </div>
 
-            <div class="process-grid">
 
-                <article class="process-card">
+            <!-- Compétence 2 -->
 
-                    <span class="process-number">01</span>
+            <div class="skill-card">
 
-                    <div class="process-icon">
-                        <i class="fa-solid fa-comments"></i>
-                    </div>
+                <div class="skill-icon">
+                    <i class="fas fa-palette"></i>
+                </div>
 
-                    <h3>Échange & Analyse</h3>
+                <h3 data-i18n="skill_design_title">
+                    Graphisme & design
+                </h3>
 
-                    <p>
-                        Nous discutons de votre projet, de vos besoins
-                        et des objectifs que vous souhaitez atteindre.
-                    </p>
+                <p data-i18n="skill_design_description">
+                    Conception de logos, affiches, visuels publicitaires
+                    et identités visuelles.
+                </p>
 
-                </article>
+                <span class="skill-number">02</span>
 
-
-                <article class="process-card">
-
-                    <span class="process-number">02</span>
-
-                    <div class="process-icon">
-                        <i class="fa-solid fa-lightbulb"></i>
-                    </div>
-
-                    <h3>Conception</h3>
-
-                    <p>
-                        Je recherche les meilleures idées et définis
-                        une solution adaptée à votre projet.
-                    </p>
-
-                </article>
+            </div>
 
 
-                <article class="process-card">
+            <!-- Compétence 3 -->
 
-                    <span class="process-number">03</span>
+            <div class="skill-card">
 
-                    <div class="process-icon">
-                        <i class="fa-solid fa-laptop-code"></i>
-                    </div>
+                <div class="skill-icon">
+                    <i class="fas fa-video"></i>
+                </div>
 
-                    <h3>Réalisation</h3>
+                <h3 data-i18n="skill_video_title">
+                    Montage vidéo
+                </h3>
 
-                    <p>
-                        Je passe à la création et au développement
-                        en respectant les objectifs définis.
-                    </p>
+                <p data-i18n="skill_video_description">
+                    Réalisation et montage de vidéos créatives
+                    pour les réseaux sociaux et les entreprises.
+                </p>
 
-                </article>
+                <span class="skill-number">03</span>
+
+            </div>
 
 
-                <article class="process-card">
+            <!-- Compétence 4 -->
 
-                    <span class="process-number">04</span>
+            <div class="skill-card">
 
-                    <div class="process-icon">
-                        <i class="fa-solid fa-circle-check"></i>
-                    </div>
+                <div class="skill-icon">
+                    <i class="fas fa-camera"></i>
+                </div>
 
-                    <h3>Livraison</h3>
+                <h3 data-i18n="skill_photo_title">
+                    Photographie digitale
+                </h3>
 
-                    <p>
-                        Nous vérifions le résultat final avant
-                        la livraison de votre projet.
-                    </p>
+                <p data-i18n="skill_photo_description">
+                    Création et retouche de photos professionnelles
+                    et de visuels attractifs.
+                </p>
 
-                </article>
+                <span class="skill-number">04</span>
+
+            </div>
+
+
+            <!-- Compétence 5 -->
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    <i class="fas fa-robot"></i>
+                </div>
+
+                <h3 data-i18n="skill_ai_title">
+                    Intelligence artificielle
+                </h3>
+
+                <p data-i18n="skill_ai_description">
+                    Utilisation des outils d'IA pour créer,
+                    automatiser et améliorer les processus.
+                </p>
+
+                <span class="skill-number">05</span>
+
+            </div>
+
+
+            <!-- Compétence 6 -->
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    <i class="fas fa-laptop"></i>
+                </div>
+
+                <h3 data-i18n="skill_office_title">
+                    Bureautique
+                </h3>
+
+                <p data-i18n="skill_office_description">
+                    Maîtrise des outils Word, Excel et PowerPoint
+                    pour les travaux professionnels.
+                </p>
+
+                <span class="skill-number">06</span>
 
             </div>
 
         </div>
 
-    </section>
+    </div>
 
+</section>
 
-    <!-- =================================
-         SECTION POURQUOI ME CHOISIR
-    ================================== -->
+<!-- ========================================
+     SECTION 4 : MES SERVICES
+======================================== -->
 
-    <section class="advantages section" id="avantages">
+<section class="services section" id="services">
 
-        <div class="container">
+    <div class="container">
 
-            <div class="advantages-container">
+        <div class="section-heading">
 
-                <div class="advantages-content">
+            <span class="section-label" data-i18n="services_label">
+                MES SERVICES
+            </span>
 
-                    <span class="section-label">
-                        MON ENGAGEMENT
+            <h2 class="section-title" data-i18n="services_title">
+                Des solutions digitales pour donner vie à vos idées
+            </h2>
+
+            <p class="section-description" data-i18n="services_description">
+                Je vous accompagne dans la conception et la réalisation
+                de vos projets grâce à des services créatifs et professionnels.
+            </p>
+
+        </div>
+
+        <div class="services-grid">
+
+            <!-- Service 1 -->
+
+            <article class="service-card">
+
+                <span class="service-number">01</span>
+
+                <div class="service-icon">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+
+                <h3 data-i18n="service_web_title">
+                    Création de sites web
+                </h3>
+
+                <p data-i18n="service_web_description">
+                    Conception de sites web modernes, responsives,
+                    professionnels et adaptés à votre activité.
+                </p>
+
+                <a href="#contact" class="service-link">
+
+                    <span data-i18n="service_learn_more">
+                        En savoir plus
                     </span>
 
-                    <h2 class="section-title">
-                        Bien plus qu'un prestataire,
-                        <span>un partenaire.</span>
-                    </h2>
+                    <i class="fas fa-arrow-right"></i>
 
-                    <p>
-                        Chaque projet est une occasion de proposer
-                        une solution utile, créative et adaptée
-                        aux ambitions de mes clients.
+                </a>
+
+            </article>
+
+
+            <!-- Service 2 -->
+
+            <article class="service-card">
+
+                <span class="service-number">02</span>
+
+                <div class="service-icon">
+                    <i class="fas fa-pen-nib"></i>
+                </div>
+
+                <h3 data-i18n="service_graphic_title">
+                    Graphisme & identité visuelle
+                </h3>
+
+                <p data-i18n="service_graphic_description">
+                    Création de logos, affiches, flyers et supports
+                    graphiques pour valoriser votre image.
+                </p>
+
+                <a href="#contact" class="service-link">
+
+                    <span data-i18n="service_learn_more">
+                        En savoir plus
+                    </span>
+
+                    <i class="fas fa-arrow-right"></i>
+
+                </a>
+
+            </article>
+
+
+            <!-- Service 3 -->
+
+            <article class="service-card">
+
+                <span class="service-number">03</span>
+
+                <div class="service-icon">
+                    <i class="fas fa-film"></i>
+                </div>
+
+                <h3 data-i18n="service_video_title">
+                    Montage vidéo
+                </h3>
+
+                <p data-i18n="service_video_description">
+                    Montage de vidéos publicitaires, promotionnelles
+                    et de contenus pour les réseaux sociaux.
+                </p>
+
+                <a href="#contact" class="service-link">
+
+                    <span data-i18n="service_learn_more">
+                        En savoir plus
+                    </span>
+
+                    <i class="fas fa-arrow-right"></i>
+
+                </a>
+
+            </article>
+
+
+            <!-- Service 4 -->
+
+            <article class="service-card">
+
+                <span class="service-number">04</span>
+
+                <div class="service-icon">
+                    <i class="fas fa-camera-retro"></i>
+                </div>
+
+                <h3 data-i18n="service_photo_title">
+                    Création de visuels professionnels
+                </h3>
+
+                <p data-i18n="service_photo_description">
+                    Réalisation et amélioration de photos et de visuels
+                    adaptés à votre communication.
+                </p>
+
+                <a href="#contact" class="service-link">
+
+                    <span data-i18n="service_learn_more">
+                        En savoir plus
+                    </span>
+
+                    <i class="fas fa-arrow-right"></i>
+
+                </a>
+
+            </article>
+
+
+            <!-- Service 5 -->
+
+            <article class="service-card">
+
+                <span class="service-number">05</span>
+
+                <div class="service-icon">
+                    <i class="fas fa-brain"></i>
+                </div>
+
+                <h3 data-i18n="service_ai_title">
+                    IA & automatisation
+                </h3>
+
+                <p data-i18n="service_ai_description">
+                    Exploitation des outils d'intelligence artificielle
+                    pour optimiser vos tâches et vos créations.
+                </p>
+
+                <a href="#contact" class="service-link">
+
+                    <span data-i18n="service_learn_more">
+                        En savoir plus
+                    </span>
+
+                    <i class="fas fa-arrow-right"></i>
+
+                </a>
+
+            </article>
+
+
+            <!-- Service 6 -->
+
+            <article class="service-card">
+
+                <span class="service-number">06</span>
+
+                <div class="service-icon">
+                    <i class="fas fa-file-alt"></i>
+                </div>
+
+                <h3 data-i18n="service_office_title">
+                    Assistance bureautique
+                </h3>
+
+                <p data-i18n="service_office_description">
+                    Mise en forme de documents et réalisation de
+                    présentations avec Word, Excel et PowerPoint.
+                </p>
+
+                <a href="#contact" class="service-link">
+
+                    <span data-i18n="service_learn_more">
+                        En savoir plus
+                    </span>
+
+                    <i class="fas fa-arrow-right"></i>
+
+                </a>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================
+     SECTION 5 : MES RÉALISATIONS
+======================================== -->
+
+<section class="projects section" id="projets">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="section-label" data-i18n="projects_label">
+                MON PORTFOLIO
+            </span>
+
+            <h2 class="section-title" data-i18n="projects_title">
+                Quelques projets réalisés
+            </h2>
+
+            <p class="section-description" data-i18n="projects_description">
+                Découvrez une sélection de mes réalisations
+                dans différents domaines de la création digitale.
+            </p>
+
+        </div>
+
+
+        <!-- Filtres des projets -->
+
+        <div class="project-filters">
+
+            <button
+                class="filter-btn active"
+                type="button"
+                data-filter="all"
+                data-i18n="filter_all"
+            >
+                Tous
+            </button>
+
+            <button
+                class="filter-btn"
+                type="button"
+                data-filter="web"
+                data-i18n="filter_web"
+            >
+                Développement web
+            </button>
+
+            <button
+                class="filter-btn"
+                type="button"
+                data-filter="design"
+                data-i18n="filter_design"
+            >
+                Graphisme
+            </button>
+
+            <button
+                class="filter-btn"
+                type="button"
+                data-filter="video"
+                data-i18n="filter_video"
+            >
+                Vidéo
+            </button>
+
+        </div>
+
+
+        <!-- Grille des projets -->
+
+        <div class="projects-grid" id="projectsGrid">
+
+            <!--
+                Les projets seront générés automatiquement
+                depuis le fichier projects.js.
+            -->
+
+        </div>
+
+
+        <!-- Bouton voir plus -->
+
+        <div class="projects-more">
+
+            <button
+                class="btn btn-outline"
+                type="button"
+                id="loadMoreProjects"
+                data-i18n="projects_more"
+            >
+                Voir plus de projets
+                <i class="fas fa-arrow-right"></i>
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================================
+     SECTION 6 : MON PROCESSUS DE TRAVAIL
+======================================== -->
+
+<section class="process section" id="process">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="section-label" data-i18n="process_label">
+                MON PROCESSUS
+            </span>
+
+            <h2 class="section-title" data-i18n="process_title">
+                Comment je travaille sur vos projets
+            </h2>
+
+            <p class="section-description" data-i18n="process_description">
+                Une méthode organisée pour transformer vos idées
+                en réalisations concrètes et professionnelles.
+            </p>
+
+        </div>
+
+        <div class="process-grid">
+
+            <!-- Étape 1 -->
+
+            <div class="process-card">
+
+                <span class="process-number">01</span>
+
+                <div class="process-icon">
+                    <i class="fas fa-comments"></i>
+                </div>
+
+                <h3 data-i18n="process_step1_title">
+                    Échange & compréhension
+                </h3>
+
+                <p data-i18n="process_step1_description">
+                    Nous discutons de vos besoins, de vos objectifs
+                    et de votre vision du projet.
+                </p>
+
+            </div>
+
+
+            <!-- Étape 2 -->
+
+            <div class="process-card">
+
+                <span class="process-number">02</span>
+
+                <div class="process-icon">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+
+                <h3 data-i18n="process_step2_title">
+                    Idéation & planification
+                </h3>
+
+                <p data-i18n="process_step2_description">
+                    Je propose une approche adaptée et organise
+                    les différentes étapes de réalisation.
+                </p>
+
+            </div>
+
+
+            <!-- Étape 3 -->
+
+            <div class="process-card">
+
+                <span class="process-number">03</span>
+
+                <div class="process-icon">
+                    <i class="fas fa-laptop"></i>
+                </div>
+
+                <h3 data-i18n="process_step3_title">
+                    Création & réalisation
+                </h3>
+
+                <p data-i18n="process_step3_description">
+                    Je donne vie à votre projet avec attention,
+                    créativité et professionnalisme.
+                </p>
+
+            </div>
+
+
+            <!-- Étape 4 -->
+
+            <div class="process-card">
+
+                <span class="process-number">04</span>
+
+                <div class="process-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+
+                <h3 data-i18n="process_step4_title">
+                    Livraison & satisfaction
+                </h3>
+
+                <p data-i18n="process_step4_description">
+                    Je vous présente le résultat final et veille
+                    à ce qu'il réponde à vos attentes.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================
+     SECTION 7 : POURQUOI TRAVAILLER AVEC MOI
+======================================== -->
+
+<section class="advantages section" id="avantages">
+
+    <div class="container">
+
+        <div class="advantages-container">
+
+            <!-- Contenu à gauche -->
+
+            <div class="advantages-content">
+
+                <span class="section-label" data-i18n="advantages_label">
+                    POURQUOI ME CHOISIR ?
+                </span>
+
+                <h2 class="section-title" data-i18n="advantages_title">
+                    Votre vision mérite une réalisation exceptionnelle.
+                </h2>
+
+                <p class="advantages-description" data-i18n="advantages_description">
+                    Je m'engage à vous proposer des solutions créatives,
+                    adaptées à vos besoins et pensées pour produire
+                    un résultat de qualité.
+                </p>
+
+
+                <div class="advantages-list">
+
+                    <div class="advantage-item">
+
+                        <div class="advantage-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+
+                        <div class="advantage-text">
+
+                            <h3 data-i18n="advantage_quality_title">
+                                Qualité & professionnalisme
+                            </h3>
+
+                            <p data-i18n="advantage_quality_description">
+                                Une attention particulière aux détails
+                                pour des réalisations soignées.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="advantage-item">
+
+                        <div class="advantage-icon">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+
+                        <div class="advantage-text">
+
+                            <h3 data-i18n="advantage_creativity_title">
+                                Créativité & innovation
+                            </h3>
+
+                            <p data-i18n="advantage_creativity_description">
+                                Des idées originales et des solutions
+                                adaptées à chaque projet.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="advantage-item">
+
+                        <div class="advantage-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+
+                        <div class="advantage-text">
+
+                            <h3 data-i18n="advantage_deadline_title">
+                                Respect des délais
+                            </h3>
+
+                            <p data-i18n="advantage_deadline_description">
+                                Une organisation efficace pour respecter
+                                les délais convenus.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="advantage-item">
+
+                        <div class="advantage-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+
+                        <div class="advantage-text">
+
+                            <h3 data-i18n="advantage_support_title">
+                                Écoute & accompagnement
+                            </h3>
+
+                            <p data-i18n="advantage_support_description">
+                                Un accompagnement attentif du début
+                                jusqu'à la fin de votre projet.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Visuel à droite -->
+
+            <div class="advantages-visual">
+
+                <div class="advantages-card">
+
+                    <div class="advantages-card-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+
+                    <h3 data-i18n="advantages_card_title">
+                        L'excellence au cœur de chaque création
+                    </h3>
+
+                    <p data-i18n="advantages_card_description">
+                        Chaque projet est une nouvelle occasion
+                        de créer quelque chose d'utile, de beau
+                        et de mémorable.
                     </p>
 
-                    <div class="advantages-list">
+                    <div class="advantages-card-decoration">
+                        <i class="fas fa-quote-right"></i>
+                    </div>
 
-                        <div class="advantage-item">
+                </div>
 
-                            <div class="advantage-icon">
-                                <i class="fa-solid fa-star"></i>
-                            </div>
+            </div>
 
-                            <div>
-                                <h3>Qualité & professionnalisme</h3>
+        </div>
 
-                                <p>
-                                    Une attention particulière portée
-                                    aux détails et à la qualité du travail.
-                                </p>
-                            </div>
+    </div>
+
+</section>
+
+
+<!-- ========================================
+     SECTION 8 : QUESTIONS FRÉQUENTES
+======================================== -->
+
+<section class="faq section" id="faq">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="section-label" data-i18n="faq_label">
+                FAQ
+            </span>
+
+            <h2 class="section-title" data-i18n="faq_title">
+                Questions fréquentes
+            </h2>
+
+            <p class="section-description" data-i18n="faq_description">
+                Retrouvez les réponses aux questions que vous
+                pourriez vous poser avant de démarrer un projet.
+            </p>
+
+        </div>
+
+
+        <div class="faq-container">
+
+            <!-- Question 1 -->
+
+            <div class="faq-item">
+
+                <button class="faq-question" type="button" aria-expanded="false">
+
+                    <span data-i18n="faq_question1">
+                        Quels types de projets pouvez-vous réaliser ?
+                    </span>
+
+                    <i class="fas fa-plus"></i>
+
+                </button>
+
+                <div class="faq-answer">
+
+                    <p data-i18n="faq_answer1">
+                        Je réalise des sites web, des logos, des affiches,
+                        des montages vidéo, des visuels professionnels
+                        et d'autres créations digitales.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Question 2 -->
+
+            <div class="faq-item">
+
+                <button class="faq-question" type="button" aria-expanded="false">
+
+                    <span data-i18n="faq_question2">
+                        Comment puis-je demander un devis ?
+                    </span>
+
+                    <i class="fas fa-plus"></i>
+
+                </button>
+
+                <div class="faq-answer">
+
+                    <p data-i18n="faq_answer2">
+                        Vous pouvez me contacter directement via le formulaire
+                        de contact. Décrivez votre besoin afin que nous
+                        puissions discuter de votre projet.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Question 3 -->
+
+            <div class="faq-item">
+
+                <button class="faq-question" type="button" aria-expanded="false">
+
+                    <span data-i18n="faq_question3">
+                        Travaillez-vous avec des clients à distance ?
+                    </span>
+
+                    <i class="fas fa-plus"></i>
+
+                </button>
+
+                <div class="faq-answer">
+
+                    <p data-i18n="faq_answer3">
+                        Oui. Je peux collaborer à distance avec des clients
+                        au Bénin et dans d'autres pays grâce aux outils
+                        de communication numériques.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Question 4 -->
+
+            <div class="faq-item">
+
+                <button class="faq-question" type="button" aria-expanded="false">
+
+                    <span data-i18n="faq_question4">
+                        Combien de temps faut-il pour réaliser un projet ?
+                    </span>
+
+                    <i class="fas fa-plus"></i>
+
+                </button>
+
+                <div class="faq-answer">
+
+                    <p data-i18n="faq_answer4">
+                        Le délai dépend de la nature et de la complexité
+                        du projet. Il est défini ensemble avant le démarrage
+                        du travail.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Question 5 -->
+
+            <div class="faq-item">
+
+                <button class="faq-question" type="button" aria-expanded="false">
+
+                    <span data-i18n="faq_question5">
+                        Comment pouvons-nous commencer à travailler ensemble ?
+                    </span>
+
+                    <i class="fas fa-plus"></i>
+
+                </button>
+
+                <div class="faq-answer">
+
+                    <p data-i18n="faq_answer5">
+                        Il suffit de me contacter en présentant votre idée.
+                        Nous échangerons sur vos besoins et les prochaines
+                        étapes de réalisation.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================
+     SECTION 9 : APPEL À LA COLLABORATION
+======================================== -->
+
+<section class="final-cta" id="collaboration">
+
+    <div class="container">
+
+        <div class="final-cta-content">
+
+            <span class="final-cta-label" data-i18n="cta_label">
+                DONNONS VIE À VOS IDÉES
+            </span>
+
+            <h2 data-i18n="cta_title">
+                Vous avez un projet en tête ?
+                Construisons-le ensemble.
+            </h2>
+
+            <p data-i18n="cta_description">
+                Que vous soyez entrepreneur, particulier ou entreprise,
+                je suis prêt à vous accompagner dans votre prochaine
+                aventure digitale.
+            </p>
+
+            <a href="#contact" class="btn btn-primary">
+
+                <span data-i18n="cta_button">
+                    Discutons de votre projet
+                </span>
+
+                <i class="fas fa-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================================
+     SECTION 10 : CONTACT
+======================================== -->
+
+<section class="contact section" id="contact">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="section-label" data-i18n="contact_label">
+                CONTACT
+            </span>
+
+            <h2 class="section-title" data-i18n="contact_title">
+                Parlons de votre projet
+            </h2>
+
+            <p class="section-description" data-i18n="contact_description">
+                Une idée, une question ou un projet ?
+                N'hésitez pas à me contacter.
+            </p>
+
+        </div>
+
+
+        <div class="contact-container">
+
+            <!-- Informations de contact -->
+
+            <div class="contact-info">
+
+                <h3 data-i18n="contact_info_title">
+                    Restons en contact
+                </h3>
+
+                <p data-i18n="contact_info_description">
+                    Je suis disponible pour échanger sur vos idées
+                    et vous accompagner dans vos projets digitaux.
+                </p>
+
+
+                <div class="contact-info-list">
+
+                    <!-- Email -->
+
+                    <div class="contact-info-item">
+
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+
+                        <div>
+
+                            <h4 data-i18n="contact_email_label">
+                                Email
+                            </h4>
+
+                            <p>
+                                <a href="mailto:odilonlaly086@gmail.com">
+                                    odilonlaly086@gmail.com
+                                </a>
+                            </p>
 
                         </div>
 
+                    </div>
 
-                        <div class="advantage-item">
 
-                            <div class="advantage-icon">
-                                <i class="fa-solid fa-lightbulb"></i>
-                            </div>
+                    <!-- Localisation -->
 
-                            <div>
-                                <h3>Créativité & innovation</h3>
+                    <div class="contact-info-item">
 
-                                <p>
-                                    Des idées originales et des solutions
-                                    adaptées à chaque besoin.
-                                </p>
-                            </div>
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+
+                        <div>
+
+                            <h4 data-i18n="contact_location_label">
+                                Localisation
+                            </h4>
+
+                            <p data-i18n="contact_location_value">
+                                Bénin
+                            </p>
 
                         </div>
 
+                    </div>
 
-                        <div class="advantage-item">
 
-                            <div class="advantage-icon">
-                                <i class="fa-solid fa-clock"></i>
-                            </div>
+                    <!-- Disponibilité -->
 
-                            <div>
-                                <h3>Écoute & accompagnement</h3>
+                    <div class="contact-info-item">
 
-                                <p>
-                                    Une collaboration basée sur
-                                    la communication et le suivi.
-                                </p>
-                            </div>
-
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
                         </div>
 
+                        <div>
 
-                        <div class="advantage-item">
+                            <h4 data-i18n="contact_availability_label">
+                                Disponibilité
+                            </h4>
 
-                            <div class="advantage-icon">
-                                <i class="fa-solid fa-mobile-screen"></i>
-                            </div>
-
-                            <div>
-                                <h3>Solutions modernes</h3>
-
-                                <p>
-                                    Des créations pensées pour les
-                                    besoins numériques actuels.
-                                </p>
-                            </div>
+                            <p data-i18n="contact_availability_value">
+                                Disponible pour de nouvelles collaborations
+                            </p>
 
                         </div>
 
@@ -1090,24 +1617,50 @@
                 </div>
 
 
-                <div class="advantages-visual">
+                <!-- Réseaux sociaux -->
 
-                    <div class="advantages-card">
+                <div class="contact-socials">
 
-                        <i class="fa-solid fa-rocket"></i>
+                    <h4 data-i18n="contact_social_title">
+                        Retrouvez-moi sur
+                    </h4>
 
-                        <h3>
-                            Donnons vie à vos idées.
-                        </h3>
+                    <div class="social-links">
 
-                        <p>
-                            Votre vision mérite une réalisation
-                            digitale à sa hauteur.
-                        </p>
+                        <a
+                            href="https://www.facebook.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Facebook"
+                        >
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
 
-                        <a href="#contact" class="btn btn-primary">
-                            Parlons de votre projet
-                            <i class="fa-solid fa-arrow-right"></i>
+                        <a
+                            href="https://www.linkedin.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="LinkedIn"
+                        >
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+
+                        <a
+                            href="https://www.instagram.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Instagram"
+                        >
+                            <i class="fab fa-instagram"></i>
+                        </a>
+
+                        <a
+                            href="https://www.tiktok.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="TikTok"
+                        >
+                            <i class="fab fa-tiktok"></i>
                         </a>
 
                     </div>
@@ -1116,586 +1669,354 @@
 
             </div>
 
-        </div>
 
-    </section>
+            <!-- Formulaire de contact -->
 
+            <div class="contact-form-wrapper">
 
-    <!-- =================================
-         SECTION FAQ
-    ================================== -->
+                <form
+                    id="contactForm"
+                    class="contact-form"
+                    action="https://formsubmit.co/odilonlaly086@gmail.com"
+                    method="POST"
+                >
 
-    <section class="faq section" id="faq">
+                    <!-- Configuration FormSubmit -->
 
-        <div class="container">
+                    <input
+                        type="hidden"
+                        name="_subject"
+                        value="Nouveau message depuis le portfolio ODIWEB"
+                    >
 
-            <div class="section-heading">
+                    <input
+                        type="hidden"
+                        name="_next"
+                        value="merci.html"
+                    >
 
-                <span class="section-label">
-                    BESOIN D'INFORMATIONS ?
-                </span>
+                    <input
+                        type="hidden"
+                        name="_captcha"
+                        value="false"
+                    >
 
-                <h2 class="section-title">
-                    Questions <span>fréquentes</span>
-                </h2>
 
-                <p class="section-description">
-                    Retrouvez les réponses aux questions que vous
-                    pourriez vous poser avant de collaborer avec moi.
-                </p>
-
-            </div>
-
-
-            <div class="faq-container">
-
-                <!-- QUESTION 1 -->
-                <div class="faq-item">
-
-                    <button class="faq-question" type="button">
-
-                        <span>
-                            Quels types de projets pouvez-vous réaliser ?
-                        </span>
-
-                        <i class="fa-solid fa-plus"></i>
-
-                    </button>
-
-                    <div class="faq-answer">
-
-                        <p>
-                            Je propose des services de développement web,
-                            design graphique, montage vidéo, photographie,
-                            création de contenus avec l'IA et bureautique.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <!-- QUESTION 2 -->
-                <div class="faq-item">
-
-                    <button class="faq-question" type="button">
-
-                        <span>
-                            Travaillez-vous avec des clients à distance ?
-                        </span>
-
-                        <i class="fa-solid fa-plus"></i>
-
-                    </button>
-
-                    <div class="faq-answer">
-
-                        <p>
-                            Oui. Les échanges et le suivi des projets
-                            peuvent se faire à distance grâce aux outils
-                            numériques et à Internet.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <!-- QUESTION 3 -->
-                <div class="faq-item">
-
-                    <button class="faq-question" type="button">
-
-                        <span>
-                            Comment obtenir un devis pour mon projet ?
-                        </span>
-
-                        <i class="fa-solid fa-plus"></i>
-
-                    </button>
-
-                    <div class="faq-answer">
-
-                        <p>
-                            Contactez-moi en présentant votre besoin.
-                            Nous pourrons discuter de votre projet et
-                            définir une proposition adaptée.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <!-- QUESTION 4 -->
-                <div class="faq-item">
-
-                    <button class="faq-question" type="button">
-
-                        <span>
-                            Puis-je demander des modifications ?
-                        </span>
-
-                        <i class="fa-solid fa-plus"></i>
-
-                    </button>
-
-                    <div class="faq-answer">
-
-                        <p>
-                            Les modalités de modification sont définies
-                            au début du projet afin que nous sachions
-                            clairement comment procéder.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <!-- QUESTION 5 -->
-                <div class="faq-item">
-
-                    <button class="faq-question" type="button">
-
-                        <span>
-                            Comment puis-je vous contacter ?
-                        </span>
-
-                        <i class="fa-solid fa-plus"></i>
-
-                    </button>
-
-                    <div class="faq-answer">
-
-                        <p>
-                            Vous pouvez utiliser le formulaire de contact
-                            ou les coordonnées disponibles sur cette page.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- =================================
-         SECTION APPEL À L'ACTION
-    ================================== -->
-
-    <section class="final-cta" id="collaboration">
-
-        <div class="container">
-
-            <div class="final-cta-content">
-
-                <span class="section-label">
-                    UN PROJET EN TÊTE ?
-                </span>
-
-                <h2>
-                    Votre prochaine idée mérite
-                    <span>de devenir réalité.</span>
-                </h2>
-
-                <p>
-                    Parlons de votre projet et construisons ensemble
-                    une solution digitale adaptée à vos ambitions.
-                </p>
-
-                <a href="#contact" class="btn btn-primary">
-                    Démarrer une collaboration
-                    <i class="fa-solid fa-arrow-right"></i>
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =================================
-         SECTION CONTACT
-    ================================== -->
-
-    <section class="contact section" id="contact">
-
-        <div class="container">
-
-            <div class="section-heading">
-
-                <span class="section-label">
-                    RESTONS EN CONTACT
-                </span>
-
-                <h2 class="section-title">
-                    Parlons de votre <span>projet</span>
-                </h2>
-
-                <p class="section-description">
-                    Une idée, une question ou un projet ?
-                    Je serai ravi d'échanger avec vous.
-                </p>
-
-            </div>
-
-
-            <div class="contact-container">
-
-                <!-- COORDONNÉES -->
-                <div class="contact-info">
-
-                    <h3>
-                        Construisons quelque chose
-                        d'exceptionnel ensemble.
+                    <h3 data-i18n="contact_form_title">
+                        Envoyez-moi un message
                     </h3>
 
-                    <p>
-                        Décrivez-moi votre besoin. Je vous répondrai
-                        pour discuter des possibilités de collaboration.
-                    </p>
 
+                    <!-- Nom -->
 
-                    <div class="contact-info-list">
+                    <div class="form-group">
 
-                        <div class="contact-info-item">
+                        <label for="contactName" data-i18n="form_name_label">
+                            Votre nom
+                        </label>
 
-                            <div class="contact-icon">
-                                <i class="fa-solid fa-envelope"></i>
-                            </div>
-
-                            <div>
-                                <strong>Email</strong>
-                                <a href="mailto: odilonlaly086@gmail.com">
-                                    odilonlaly086@gmail.com
-                                </a>
-                            </div>
-
-                        </div>
-
-
-                        <div class="contact-info-item">
-
-                            <div class="contact-icon">
-                                <i class="fa-solid fa-phone"></i>
-                            </div>
-
-                            <div>
-                                <strong>Téléphone</strong>
-                                <a href="tel:+2290150510966">
-                                    +229 01 50 51 09 66
-                                </a>
-                            </div>
-
-                        </div>
-
-
-                        <div class="contact-info-item">
-
-                            <div class="contact-icon">
-                                <i class="fa-solid fa-location-dot"></i>
-                            </div>
-
-                            <div>
-                                <strong>Localisation</strong>
-                                <span>Bénin</span>
-                            </div>
-
-                        </div>
+                        <input
+                            type="text"
+                            id="contactName"
+                            name="name"
+                            data-i18n-placeholder="form_name_placeholder"
+                            placeholder="Entrez votre nom"
+                            required
+                        >
 
                     </div>
 
 
-                    <!-- RÉSEAUX SOCIAUX -->
-                    <div class="contact-socials">
+                    <!-- Email -->
 
-                        <h4>Retrouvez-moi sur</h4>
+                    <div class="form-group">
 
-                        <div class="social-links">
+                        <label for="contactEmail" data-i18n="form_email_label">
+                            Votre adresse email
+                        </label>
 
-                            <a href="#" aria-label="Facebook">
-                                <i class="fa-brands fa-facebook-f"></i>
-                            </a>
-
-                            <a href="#" aria-label="Instagram">
-                                <i class="fa-brands fa-instagram"></i>
-                            </a>
-
-                            <a href="#" aria-label="TikTok">
-                                <i class="fa-brands fa-tiktok"></i>
-                            </a>
-
-                            <a href="#" aria-label="LinkedIn">
-                                <i class="fa-brands fa-linkedin-in"></i>
-                            </a>
-
-                        </div>
+                        <input
+                            type="email"
+                            id="contactEmail"
+                            name="email"
+                            data-i18n-placeholder="form_email_placeholder"
+                            placeholder="Entrez votre adresse email"
+                            required
+                        >
 
                     </div>
 
-                </div>
+
+                    <!-- Sujet -->
+
+                    <div class="form-group">
+
+                        <label for="contactSubject" data-i18n="form_subject_label">
+                            Sujet du message
+                        </label>
+
+                        <input
+                            type="text"
+                            id="contactSubject"
+                            name="subject"
+                            data-i18n-placeholder="form_subject_placeholder"
+                            placeholder="Exemple : Création de site web"
+                            required
+                        >
+
+                    </div>
 
 
-                <!-- FORMULAIRE -->
-                <div class="contact-form-wrapper">
+                    <!-- Message -->
 
-                    <form id="contactForm" class="contact-form">
+                    <div class="form-group">
 
-                        <h3>Envoyez-moi un message</h3>
+                        <label for="contactMessage" data-i18n="form_message_label">
+                            Votre message
+                        </label>
 
-                        <div class="form-row">
+                        <textarea
+                            id="contactMessage"
+                            name="message"
+                            rows="6"
+                            data-i18n-placeholder="form_message_placeholder"
+                            placeholder="Décrivez votre projet..."
+                            required
+                        ></textarea>
 
-                            <div class="form-group">
-
-                                <label for="contactName">
-                                    Votre nom
-                                </label>
-
-<input
-    type="text"
-    id="contactName"
-    data-i18n-placeholder="namePlaceholder"
-    placeholder="Entrez votre nom"
->
-
-                                <input
-                                    type="text"
-                                    id="contactName"
-                                    name="name"
-                                    placeholder="Votre nom complet"
-                                    required>
-
-                            </div>
+                    </div>
 
 
-                            <div class="form-group">
+                    <!-- Statut du formulaire -->
 
-                                <label for="contactEmail">
-                                    Votre email
-                                </label>
-
-                                <input
-                                    type="email"
-                                    id="contactEmail"
-                                    name="email"
-                                    placeholder="exemple@email.com"
-                                    required>
-
-                            </div>
-
-                        </div>
+                    <div
+                        class="contact-status"
+                        id="contactStatus"
+                        role="status"
+                        aria-live="polite"
+                    ></div>
 
 
-                        <div class="form-group">
+                    <!-- Bouton d'envoi -->
 
-                            <label for="contactSubject">
-                                Sujet du message
-                            </label>
+                    <button type="submit" class="btn btn-primary">
 
-                            <input
-                                type="text"
-                                id="contactSubject"
-                                name="subject"
-                                placeholder="Objet de votre demande"
-                                required>
-
-                        </div>
-
-
-                        <div class="form-group">
-
-                            <label for="contactMessage">
-                                Votre message
-                            </label>
-
-                            <textarea
-                                id="contactMessage"
-                                name="message"
-                                rows="6"
-                                placeholder="Décrivez votre projet..."
-                                required></textarea>
-
-                        </div>
-
-
-                        <button type="submit" class="btn btn-primary">
-
+                        <span data-i18n="form_submit">
                             Envoyer le message
-
-                            <i class="fa-solid fa-paper-plane"></i>
-
-                        </button>
-
-                        <p
-                            id="contactStatus"
-                            class="form-status"
-                            role="status"
-                            aria-live="polite">
-                        </p>
-
-                    </form>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =================================
-         PIED DE PAGE / FOOTER
-    ================================== -->
-
-    <footer class="footer">
-
-        <div class="container">
-
-            <div class="footer-container">
-
-                <!-- IDENTITÉ -->
-                <div class="footer-brand">
-
-                    <a href="#accueil" class="logo">
-
-                        <img src="logo-odiweb.png" alt="Logo ODIWEB">
-
-                        <span>
-                            ODIWEB<span class="logo-highlight">.</span>
                         </span>
 
-                    </a>
+                        <i class="fas fa-paper-plane"></i>
 
-                    <p>
-                        Des idées créatives, des solutions digitales
-                        et des expériences web pensées pour faire
-                        grandir vos projets.
-                    </p>
+                    </button>
 
-                </div>
-
-
-                <!-- NAVIGATION -->
-                <div class="footer-column">
-
-                    <h3>Navigation</h3>
-
-                    <ul>
-
-                        <li><a href="#accueil">Accueil</a></li>
-
-                        <li><a href="#apropos">À propos</a></li>
-
-                        <li><a href="#competences">Compétences</a></li>
-
-                        <li><a href="#services">Services</a></li>
-
-                        <li><a href="#projets">Projets</a></li>
-
-                    </ul>
-
-                </div>
-
-
-                <!-- SERVICES -->
-                <div class="footer-column">
-
-                    <h3>Mes services</h3>
-
-                    <ul>
-
-                        <li><a href="#services">Développement Web</a></li>
-
-                        <li><a href="#services">Design graphique</a></li>
-
-                        <li><a href="#services">Montage vidéo</a></li>
-
-                        <li><a href="#services">Intelligence artificielle</a></li>
-
-                        <li><a href="#services">Bureautique</a></li>
-
-                    </ul>
-
-                </div>
-
-
-                <!-- CONTACT -->
-                <div class="footer-column">
-
-                    <h3>Contact</h3>
-
-                    <ul>
-
-                        <li><a href="#contact">Me contacter</a></li>
-
-                        <li><a href="#contact">Demander un devis</a></li>
-
-                        <li><a href="#faq">Questions fréquentes</a></li>
-
-                    </ul>
-
-                </div>
-
-            </div>
-
-
-            <div class="footer-bottom">
-
-                <p>
-                    © <span id="currentYear">2026</span>
-                    ODIWEB TECH SOLUTIONS.
-                    Tous droits réservés.
-                </p>
-
-                <a href="#accueil" class="back-to-top">
-
-                    Retour en haut
-
-                    <i class="fa-solid fa-arrow-up"></i>
-
-                </a>
+                </form>
 
             </div>
 
         </div>
 
-    </footer>
+    </div>
 
+</section>
 
-    <!-- =================================
-         BOUTON WHATSAPP FLOTTANT
-    ================================== -->
-
-    <a
-        href="https://wa.me/229XXXXXXXX"
-        class="whatsapp-float"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Me contacter sur WhatsApp">
-
-        <i class="fa-brands fa-whatsapp"></i>
-
-    </a>
-
-
-    <!-- =================================
-         FICHIERS JAVASCRIPT
-    ================================== -->
-
-    <script src="translations.js"></script>
-
-    <script src="projects.js"></script>
-
-    <script src="main.js"></script>
 
 </main>
 
-</body>
 
+<!-- ========================================
+     PIED DE PAGE
+======================================== -->
+
+<footer class="footer">
+
+    <div class="container">
+
+        <div class="footer-container">
+
+            <!-- Présentation -->
+
+            <div class="footer-brand">
+
+                <a href="#accueil" class="footer-logo">
+
+                    <img
+                        src="logo-odiweb.png"
+                        alt="ODIWEB"
+                    >
+
+                    <span>ODIWEB</span>
+
+                </a>
+
+                <p data-i18n="footer_description">
+                    Créativité, technologie et innovation
+                    au service de vos ambitions digitales.
+                </p>
+
+            </div>
+
+
+            <!-- Navigation -->
+
+            <div class="footer-column">
+
+                <h3 data-i18n="footer_navigation">
+                    Navigation
+                </h3>
+
+                <ul>
+
+                    <li>
+                        <a href="#accueil" data-i18n="nav_home">
+                            Accueil
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#apropos" data-i18n="nav_about">
+                            À propos
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#services" data-i18n="nav_services">
+                            Services
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#projets" data-i18n="nav_projects">
+                            Projets
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#contact" data-i18n="nav_contact">
+                            Contact
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- Services -->
+
+            <div class="footer-column">
+
+                <h3 data-i18n="footer_services">
+                    Services
+                </h3>
+
+                <ul>
+
+                    <li>
+                        <a href="#services" data-i18n="service_web_title">
+                            Création de sites web
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#services" data-i18n="service_graphic_title">
+                            Graphisme & identité visuelle
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#services" data-i18n="service_video_title">
+                            Montage vidéo
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#services" data-i18n="service_ai_title">
+                            IA & automatisation
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- Contact rapide -->
+
+            <div class="footer-column">
+
+                <h3 data-i18n="footer_contact">
+                    Contact
+                </h3>
+
+                <ul>
+
+                    <li>
+                        <a href="mailto:odilonlaly086@gmail.com">
+                            odilonlaly086@gmail.com
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#contact" data-i18n="footer_contact_button">
+                            Me contacter
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <!-- Bas du pied de page -->
+
+        <div class="footer-bottom">
+
+            <p>
+                © <span id="currentYear"></span>
+                <span data-i18n="footer_copyright">
+                    ODIWEB. Tous droits réservés.
+                </span>
+            </p>
+
+            <a href="#accueil" class="back-to-top" aria-label="Retour en haut">
+
+                <i class="fas fa-arrow-up"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- ========================================
+     BOUTON WHATSAPP FLOTTANT
+======================================== -->
+
+<a
+    href="https://wa.me/"
+    class="whatsapp-float"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Contacter sur WhatsApp"
+>
+
+    <i class="fab fa-whatsapp"></i>
+
+</a>
+
+
+<!-- ========================================
+     FICHIERS JAVASCRIPT
+======================================== -->
+
+<script src="translations.js"></script>
+<script src="projects.js"></script>
+<script src="main.js"></script>
+
+</body>
 </html>
