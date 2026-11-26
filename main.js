@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", function () {
             contactForm.querySelector('[type="submit"]');
 
         const formSubmitURL =
-            "https://formsubmit.co/ajax/odilonlaly086@gmail.com";
+            "https://formsubmit.co/ajax/odilonlaly50@gmail.com";
 
         let formIsSubmitting = false;
 
