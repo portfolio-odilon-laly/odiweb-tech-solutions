@@ -263,26 +263,30 @@ document.addEventListener("DOMContentLoaded", function () {
                 window.location.href = "merci.html";
 
 
-            } catch (error) {
+            
+} catch (error) {
 
-                console.error("Erreur FormSubmit :", error);
+    console.error("Erreur FormSubmit :", error);
 
-                if (contactStatus) {
+    if (contactStatus) {
 
-                    contactStatus.textContent =
-                        "Une erreur est survenue. Veuillez réessayer.";
+        contactStatus.textContent =
+            error.message || "Erreur inconnue. Veuillez réessayer.";
 
-                }
+    }
 
-                if (submitButton) {
+    if (submitButton) {
 
-                    submitButton.disabled = false;
+        submitButton.disabled = false;
 
-                    submitButton.textContent = originalButtonText;
+        submitButton.textContent = originalButtonText;
 
-                }
+    }
 
-            }
+}
+
+
+            
 
         });
 
@@ -474,3 +478,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 });
+
+
+} catch (error) {
+
+    console.error("Erreur FormSubmit :", error);
+
+    if (contactStatus) {
+
+        contactStatus.textContent =
+            error.message || "Erreur inconnue. Veuillez réessayer.";
+
+    }
+
+    if (submitButton) {
+
+        submitButton.disabled = false;
+
+        submitButton.textContent = originalButtonText;
+
+    }
+
+}
+
