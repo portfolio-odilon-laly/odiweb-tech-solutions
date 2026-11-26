@@ -683,13 +683,13 @@ section {
 
 .about-image {
     position: relative;
-    max-width: 350px;
+    max-width: 430px;
     margin: 0 auto;
 }
 
 .about-image img {
     width: 80%;
-    height: 400px;
+    height: 450px;
     object-fit: cover;
     object-position: center top;
     border-radius: 20px;
