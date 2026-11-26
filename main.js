@@ -479,25 +479,200 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
+/* ==========================================
+   FORMULAIRE ODIWEB - FORMSUBMIT AJAX
+========================================== */
 
-} catch (error) {
+const contactForm = document.getElementById("contactForm");
 
-    console.error("Erreur FormSubmit :", error);
+if (contactForm) {
 
-    if (contactStatus) {
+    const contactStatus = document.getElementById("contactStatus");
 
-        contactStatus.textContent =
-            error.message || "Erreur inconnue. Veuillez réessayer.";
+    const formSubmitURL =
+        "https://formsubmit.co/ajax/odilonlaly086@gmail.com";
+
+    const submitButton =
+        contactForm.querySelector('[type="submit"]');
+
+    let formIsSubmitting = false;
+
+
+    /* AFFICHER UN MESSAGE */
+
+    function showContactMessage(message, color) {
+
+        if (!contactStatus) return;
+
+        contactStatus.textContent = message;
+        contactStatus.style.color = color;
 
     }
 
-    if (submitButton) {
 
-        submitButton.disabled = false;
+    /* ENVOI DU FORMULAIRE */
 
-        submitButton.textContent = originalButtonText;
+    contactForm.addEventListener("submit", async function (event) {
 
-    }
+        event.preventDefault();
+
+        if (formIsSubmitting) return;
+
+        if (!contactForm.reportValidity()) return;
+
+        formIsSubmitting = true;
+
+
+        /* RÉCUPÉRATION DES INFORMATIONS */
+
+        const name =
+            document.getElementById("contactName").value.trim();
+
+        const email =
+            document.getElementById("contactEmail").value.trim();
+
+        const subject =
+            document.getElementById("contactSubject").value.trim();
+
+        const message =
+            document.getElementById("contactMessage").value.trim();
+
+
+        if (!name || !email || !subject || !message) {
+
+            showContactMessage(
+                "Veuillez remplir tous les champs.",
+                "red"
+            );
+
+            formIsSubmitting = false;
+
+            return;
+        }
+
+
+        /* ENREGISTREMENT POUR MERCI.HTML */
+
+        const clientData = {
+
+            name: name,
+            email: email,
+            subject: subject,
+            message: message
+
+        };
+
+        localStorage.setItem(
+            "odiweb-client-message",
+            JSON.stringify(clientData)
+        );
+
+
+        /* PRÉPARATION DE L'ENVOI */
+
+        const formData = new FormData(contactForm);
+
+        formData.set("name", name);
+        formData.set("email", email);
+        formData.set("subject", subject);
+        formData.set("message", message);
+
+        formData.set(
+            "_subject",
+            "Nouvelle demande depuis ODIWEB PORTFOLIO"
+        );
+
+        formData.set("_template", "table");
+        formData.set("_captcha", "false");
+
+
+        /* DÉSACTIVER LE BOUTON */
+
+        const originalButtonText = submitButton
+            ? submitButton.textContent
+            : "";
+
+        if (submitButton) {
+
+            submitButton.disabled = true;
+            submitButton.textContent = "Envoi en cours...";
+
+        }
+
+        showContactMessage(
+            "Envoi de votre message...",
+            "#087DE0"
+        );
+
+
+        /* ENVOI FORMSUBMIT */
+
+        try {
+
+            const response = await fetch(formSubmitURL, {
+
+                method: "POST",
+
+                headers: {
+                    "Accept": "application/json"
+                },
+
+                body: formData
+
+            });
+
+
+            const data = await response.json();
+
+            console.log("Réponse FormSubmit :", data);
+
+
+            if (
+                !response.ok ||
+                String(data.success).toLowerCase() !== "true"
+            ) {
+
+                throw new Error(
+                    data.message ||
+                    "FormSubmit n'a pas accepté votre message."
+                );
+
+            }
+
+
+            /* CONFIRMATION */
+
+            showContactMessage(
+                "Votre message a été envoyé avec succès !",
+                "green"
+            );
+
+
+            /* REDIRECTION */
+
+            window.location.href = "merci.html";
+
+
+        } catch (error) {
+
+            console.error("Erreur FormSubmit :", error);
+
+            showContactMessage(
+                "Échec de l'envoi : " + error.message,
+                "red"
+            );
+
+            if (submitButton) {
+
+                submitButton.disabled = false;
+                submitButton.textContent = originalButtonText;
+
+            }
+
+            formIsSubmitting = false;
+
+        }
+
+    });
 
 }
-
