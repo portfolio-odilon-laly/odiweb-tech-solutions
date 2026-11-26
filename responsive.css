@@ -859,3 +859,99 @@
 
 }
 
+/* ==========================================
+   CORRECTION DU DÉBORDEMENT SUR MOBILE
+========================================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* ==========================================
+   SECTION HERO - VERSION MOBILE
+========================================== */
+
+@media (max-width: 768px) {
+
+    .hero {
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    .hero-container {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 30px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .hero-content,
+    .hero-visual,
+    .hero-image-wrapper {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    .hero-title,
+    .hero-subtitle,
+    .hero-description {
+        max-width: 100%;
+        white-space: normal;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+    }
+
+    .hero-title {
+        font-size: clamp(26px, 7vw, 36px);
+        line-height: 1.25;
+    }
+
+    .hero-subtitle {
+        font-size: 20px;
+        line-height: 1.4;
+    }
+
+    .hero-description {
+        font-size: 16px;
+        line-height: 1.8;
+    }
+
+    .hero-profile-image {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .hero-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 100%;
+        gap: 12px;
+    }
+
+}
+
+
